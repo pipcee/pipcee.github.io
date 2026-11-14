@@ -64,7 +64,7 @@ window.BLOG_API_CONFIG = {
 │  ├─ home.js             # 25 只鸟群集动画
 │  └─ ...                 # 各页面渲染
 ├─ assets/
-│  ├─ avatar.svg
+│  ├─ AR.png
 │  ├─ favicon.svg
 │  ├─ gallery/            # 18 张本地图库 SVG
 │  └─ files/              # 9 个可下载示例文件

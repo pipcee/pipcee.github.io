@@ -4,7 +4,6 @@
 
   var title = document.getElementById("note-title");
   var summary = document.getElementById("note-summary");
-  var meta = document.getElementById("note-meta");
   var body = document.getElementById("note-body");
   var end = document.getElementById("note-end");
   var series = document.getElementById("note-series");
@@ -37,11 +36,6 @@
       "<h2>" +
       BlogUI.escapeHTML(note.title) +
       "</h2>" +
-      '<span class="note-series__meta">' +
-      BlogUI.formatDate(note.date) +
-      " · " +
-      (Number(note.readingTime) || 1) +
-      " min</span>" +
       "</a>"
     );
   }
@@ -50,7 +44,6 @@
     document.title = "没有找到这篇笔记 — Bring`s Blog";
     setText("note-title", "没有找到这篇笔记");
     summary.textContent = "";
-    meta.innerHTML = "";
     setText("note-crumb-title", "未找到");
     body.innerHTML =
       '<div class="error-state"><div><p>' +
@@ -73,8 +66,7 @@
       kicker.innerHTML =
         "<span>" +
         BlogUI.escapeHTML(folder ? folder.en : "Note") +
-        '</span><span class="eyebrow__line" aria-hidden="true"></span>' +
-        BlogUI.formatDate(note.date);
+        '</span><span class="eyebrow__line" aria-hidden="true"></span>Notes';
     }
 
     title.textContent = note.title;
@@ -86,22 +78,6 @@
       crumbFolder.textContent = folder ? folder.name : "笔记";
       crumbFolder.href = folderHref(folder);
     }
-
-    var tags = (note.tags || [])
-      .map(function (tag) {
-        return '<span class="tag">' + BlogUI.escapeHTML(tag) + "</span>";
-      })
-      .join("");
-
-    meta.innerHTML =
-      '<span class="note-meta__item">' +
-      BlogUI.escapeHTML(note.date) +
-      "</span>" +
-      '<span class="note-meta__divider" aria-hidden="true"></span>' +
-      '<span class="note-meta__item">' +
-      (Number(note.readingTime) || 1) +
-      " 分钟阅读</span>" +
-      (tags ? '<span class="tag-list note-meta__tags">' + tags + "</span>" : "");
 
     body.innerHTML = note.body || "<p>这篇笔记还没有正文。</p>";
     end.hidden = false;

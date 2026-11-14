@@ -188,7 +188,7 @@ window.BLOG_API_CONFIG = {
 
     getNotes: function (folderId, page, pageSize) {
       var safePage = Math.max(1, parseInt(page, 10) || 1);
-      var safeSize = Math.max(1, parseInt(pageSize, 10) || 4);
+      var safeSize = Math.max(1, parseInt(pageSize, 10) || 15);
 
       return ready().then(function () {
         var folder = (data().articleFolders || []).find(function (item) {

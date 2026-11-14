@@ -3,7 +3,6 @@
   "use strict";
 
   var grid = document.getElementById("folder-grid");
-  var meta = document.getElementById("articles-meta");
   if (!grid) return;
 
   var icons = {
@@ -77,17 +76,6 @@
     try {
       var folders = await BlogAPI.getArticleFolders();
       renderFolders(folders);
-      if (meta) {
-        var notes = folders.reduce(function (sum, folder) {
-          return sum + (Number(folder.count) || 0);
-        }, 0);
-        meta.innerHTML =
-          "<span>" +
-          String(folders.length).padStart(2, "0") +
-          " folders</span><span aria-hidden=\"true\">/</span><span>" +
-          String(notes).padStart(2, "0") +
-          " notes · 按更新时间排序</span>";
-      }
     } catch (error) {
       grid.innerHTML =
         '<div class="error-state"><div><p>' +

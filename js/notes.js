@@ -8,7 +8,7 @@
 
   var folderId = BlogUI.readQuery("folder", "icpc");
   var requestedPage = BlogUI.positiveInt(BlogUI.readQuery("page", "1"), 1);
-  var pageSize = 4;
+  var pageSize = 15;
 
   function setText(id, value) {
     var node = document.getElementById(id);
@@ -56,11 +56,6 @@
 
   function noteRow(note, index) {
     var number = String(index + 1).padStart(2, "0");
-    var tags = (note.tags || [])
-      .map(function (tag) {
-        return '<span class="tag">' + BlogUI.escapeHTML(tag) + "</span>";
-      })
-      .join("");
 
     return (
       '<a class="note-row" href="note.html?folder=' +
@@ -74,24 +69,12 @@
       number +
       "</span>" +
       '<div class="note-row__body">' +
-      '<span class="note-row__meta">' +
-      "<time datetime=\"" +
-      BlogUI.escapeHTML(note.date) +
-      '">' +
-      BlogUI.formatDate(note.date) +
-      "</time>" +
-      '<span aria-hidden="true">·</span>' +
-      "<span>" +
-      (Number(note.readingTime) || 1) +
-      " min read</span>" +
-      "</span>" +
       "<h2>" +
       BlogUI.escapeHTML(note.title) +
       "</h2>" +
       '<span class="note-row__summary">' +
       BlogUI.escapeHTML(note.summary || "") +
       "</span>" +
-      (tags ? '<span class="tag-list note-row__tags">' + tags + "</span>" : "") +
       "</div>" +
       '<span class="note-row__arrow" aria-hidden="true">' +
       '<svg viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +

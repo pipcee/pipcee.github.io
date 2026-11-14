@@ -21,6 +21,7 @@
 | [06-resources.md](06-resources.md) | 文件下载、MD5、URL、分页 |
 | [07-quality.md](07-quality.md) | 响应式、可访问性、视觉与资源一致性验证 |
 | [08-backend-api.md](08-backend-api.md) | 后端接口契约汇总 |
+| [09-ui-v2.md](09-ui-v2.md) | UI v2：关于页、文章页与资源页简化 |
 
 ## 验证结果摘要
 

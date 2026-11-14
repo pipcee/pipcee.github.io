@@ -22,12 +22,10 @@
       avatar.alt = profile.avatarAlt || avatar.alt;
     }
 
-    setText("profile-handle", profile.handle);
     setText("profile-status-label", profile.status && profile.status.label);
     setText("profile-status-value", profile.status && profile.status.value);
     setText("profile-status-detail", profile.status && profile.status.detail);
     setText("profile-status-term", profile.status && profile.status.term);
-    setText("profile-location", profile.location);
 
     var bio = document.getElementById("profile-bio");
     if (bio) {
@@ -39,43 +37,6 @@
       bio.innerHTML = paragraphs
         .map(function (paragraph) {
           return "<p>" + BlogUI.escapeHTML(paragraph) + "</p>";
-        })
-        .join("");
-    }
-
-    var now = document.getElementById("profile-now");
-    if (now && Array.isArray(profile.now) && profile.now.length) {
-      now.innerHTML = profile.now
-        .map(function (item) {
-          return (
-            "<div><dt>" +
-            BlogUI.escapeHTML(item.label) +
-            "</dt><dd>" +
-            BlogUI.escapeHTML(item.value) +
-            "</dd></div>"
-          );
-        })
-        .join("");
-    } else if (now) {
-      now.hidden = true;
-    }
-
-    var socials = document.getElementById("profile-socials");
-    if (socials && Array.isArray(profile.socials)) {
-      socials.innerHTML = profile.socials
-        .map(function (item) {
-          var external = /^https?:/i.test(item.href || "");
-          return (
-            '<li><a class="text-link" href="' +
-            BlogUI.escapeHTML(item.href || "#") +
-            '"' +
-            (external
-              ? ' target="_blank" rel="noopener noreferrer"'
-              : "") +
-            ">" +
-            BlogUI.escapeHTML(item.label) +
-            ' <span aria-hidden="true">↗</span></a></li>'
-          );
         })
         .join("");
     }

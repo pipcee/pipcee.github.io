@@ -4,7 +4,6 @@
 
   var list = document.getElementById("resource-list");
   var pagination = document.getElementById("resource-pagination");
-  var metaLine = document.getElementById("resources-meta");
   if (!list) return;
 
   var requestedPage = BlogUI.positiveInt(BlogUI.readQuery("page", "1"), 1);
@@ -126,15 +125,6 @@
         return "resources.html?page=" + page;
       },
     });
-
-    if (metaLine) {
-      metaLine.innerHTML =
-        "<span>" +
-        String(result.total).padStart(2, "0") +
-        ' files</span><span aria-hidden="true">/</span><span>' +
-        String(result.totalPages).padStart(2, "0") +
-        " pages · MD5 可校验</span>";
-    }
   }
 
   function setLoading() {
