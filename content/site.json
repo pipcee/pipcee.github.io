@@ -1,0 +1,62 @@
+{
+  "site": {
+    "name": "Bring`s Blog",
+    "description": "算法竞赛、学习笔记、生活图集与资源分享。",
+    "since": 2024,
+    "location": "合肥 · 中国"
+  },
+  "profile": {
+    "name": "Bring",
+    "handle": "@bring",
+    "role": "计算机科学与技术 · 本科",
+    "status": {
+      "label": "目前状态",
+      "value": "大二",
+      "detail": "2025 级 · 计算机科学与技术",
+      "term": "2026 秋季学期"
+    },
+    "avatar": "assets/avatar.svg",
+    "avatarAlt": "Bring 的头像：戴眼镜、穿深色上衣的年轻人插画",
+    "intro": "你好，我是 Bring。一个还在学着把问题想清楚、把代码写干净的大二学生。喜欢算法竞赛里的推演，也喜欢在周末带着相机到处走。",
+    "bio": [
+      "目前在校队训练 ICPC，主要写图论与数据结构。偶尔也在社团里出题、带新生训练，试着把踩过的坑整理成别人能看懂的文档。",
+      "这个博客是一本公开的练习册：记录解题思路、社团建设和一些没什么用但想留下的小事。写得慢一点，也写得诚实一点。"
+    ],
+    "now": [
+      {
+        "label": "在学",
+        "value": "图论 / 编译原理"
+      },
+      {
+        "label": "在做",
+        "value": "ICPC 校队训练"
+      },
+      {
+        "label": "在写",
+        "value": "每周一篇笔记"
+      }
+    ],
+    "interests": [
+      "算法竞赛",
+      "数据结构",
+      "摄影",
+      "写作"
+    ],
+    "location": "合肥 · 中国",
+    "email": "hello@brings.blog",
+    "socials": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/"
+      },
+      {
+        "label": "Codeforces",
+        "href": "https://codeforces.com/"
+      },
+      {
+        "label": "Email",
+        "href": "mailto:hello@brings.blog"
+      }
+    ]
+  }
+}

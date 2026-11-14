@@ -1,0 +1,362 @@
+[
+  {
+    "id": "icpc-nanjing-2026",
+    "folder": "icpc",
+    "title": "2026 ICPC 南京站 · 从热身赛到正赛的 72 小时",
+    "summary": "一次区域赛的完整记录：赛前分工、赛场决策、失误复盘，以及最后 40 分钟的那次提交。",
+    "date": "2026-11-09",
+    "readingTime": 9,
+    "tags": [
+      "ICPC",
+      "复盘",
+      "团队"
+    ],
+    "status": "published",
+    "filename": "icpc-nanjing-2026.md"
+  },
+  {
+    "id": "icpc-network-flow-modeling",
+    "folder": "icpc",
+    "title": "网络流建模：从 24 题里提炼的三个套路",
+    "summary": "把题目条件翻译成容量和费用，比背 Dinic 更难。整理训练中反复出现的三类建模方式。",
+    "date": "2026-10-24",
+    "readingTime": 8,
+    "tags": [
+      "网络流",
+      "建模",
+      "训练"
+    ],
+    "status": "published",
+    "filename": "icpc-network-flow-modeling.md"
+  },
+  {
+    "id": "icpc-hall-theorem",
+    "folder": "icpc",
+    "title": "Hall 定理与二分图完美匹配",
+    "summary": "从鸽巢原理到增广路：把 Hall 条件重新证明一遍，并整理它在构造题里的用法。",
+    "date": "2026-10-02",
+    "readingTime": 6,
+    "tags": [
+      "图论",
+      "二分图",
+      "证明"
+    ],
+    "status": "published",
+    "filename": "icpc-hall-theorem.md"
+  },
+  {
+    "id": "icpc-interactive-checklist",
+    "folder": "icpc",
+    "title": "交互题读题与调试清单",
+    "summary": "交互题的失分常常不是算法，而是缓存、次数和边界。把这些检查固定成流程。",
+    "date": "2026-09-18",
+    "readingTime": 5,
+    "tags": [
+      "交互题",
+      "调试",
+      "清单"
+    ],
+    "status": "published",
+    "filename": "icpc-interactive-checklist.md"
+  },
+  {
+    "id": "icpc-invariant-construction",
+    "folder": "icpc",
+    "title": "构造题中的不变量：三道题的对拍记录",
+    "summary": "构造题不是猜答案，而是寻找一个在操作中保持不变的量，再用它约束选择。",
+    "date": "2026-08-30",
+    "readingTime": 7,
+    "tags": [
+      "构造",
+      "不变量",
+      "对拍"
+    ],
+    "status": "published",
+    "filename": "icpc-invariant-construction.md"
+  },
+  {
+    "id": "icpc-teamwork-time",
+    "folder": "icpc",
+    "title": "赛场时间分配与三人协作",
+    "summary": "把五个小时拆成可执行的时间块，记录一次团队赛中关于分工、读题和止损的约定。",
+    "date": "2026-08-11",
+    "readingTime": 6,
+    "tags": [
+      "团队",
+      "策略",
+      "ICPC"
+    ],
+    "status": "published",
+    "filename": "icpc-teamwork-time.md"
+  },
+  {
+    "id": "algo-fenwick",
+    "folder": "algorithms",
+    "title": "树状数组的三类经典应用",
+    "summary": "不只用来求区间和：用 lowbit 的视角整理树状数组在差分、逆序对和值域计数中的用法。",
+    "date": "2026-11-02",
+    "readingTime": 8,
+    "tags": [
+      "数据结构",
+      "树状数组",
+      "模板"
+    ],
+    "status": "published",
+    "filename": "algo-fenwick.md"
+  },
+  {
+    "id": "algo-slope-optimization",
+    "folder": "algorithms",
+    "title": "从朴素 DP 到斜率优化",
+    "summary": "从一个二次型转移式出发，推导决策单调性与凸包维护，最后落在能抄的代码骨架上。",
+    "date": "2026-10-16",
+    "readingTime": 9,
+    "tags": [
+      "动态规划",
+      "斜率优化",
+      "推导"
+    ],
+    "status": "published",
+    "filename": "algo-slope-optimization.md"
+  },
+  {
+    "id": "algo-tarjan",
+    "folder": "algorithms",
+    "title": "Tarjan 与强连通分量：模板之外",
+    "summary": "DFS 序、low 值和栈的交互关系，以及多组数据、重边和自环时的常见错误。",
+    "date": "2026-09-27",
+    "readingTime": 7,
+    "tags": [
+      "图论",
+      "SCC",
+      "Tarjan"
+    ],
+    "status": "published",
+    "filename": "algo-tarjan.md"
+  },
+  {
+    "id": "algo-persistent-segment",
+    "folder": "algorithms",
+    "title": "可持久化线段树入门",
+    "summary": "每次单点修改只复制 O(log n) 个节点，用版本差解决区间第 k 小与历史状态查询。",
+    "date": "2026-09-09",
+    "readingTime": 8,
+    "tags": [
+      "数据结构",
+      "可持久化",
+      "主席树"
+    ],
+    "status": "published",
+    "filename": "algo-persistent-segment.md"
+  },
+  {
+    "id": "algo-hash-risks",
+    "folder": "algorithms",
+    "title": "字符串哈希的风险边界",
+    "summary": "哈希不是概率正确的魔法。整理自然溢出、双重哈希、构造攻击与真正需要精确比较的场合。",
+    "date": "2026-08-21",
+    "readingTime": 6,
+    "tags": [
+      "字符串",
+      "哈希",
+      "竞赛"
+    ],
+    "status": "published",
+    "filename": "algo-hash-risks.md"
+  },
+  {
+    "id": "algo-binary-answer-check",
+    "folder": "algorithms",
+    "title": "二分答案：如何设计一个可靠的 check",
+    "summary": "二分本身只要十行，真正决定正确性的是单调性、边界定义和 check 函数的复杂度。",
+    "date": "2026-08-03",
+    "readingTime": 7,
+    "tags": [
+      "二分",
+      "基础",
+      "方法论"
+    ],
+    "status": "published",
+    "filename": "algo-binary-answer-check.md"
+  },
+  {
+    "id": "club-freshman-camp",
+    "folder": "club",
+    "title": "新人训练营设计复盘",
+    "summary": "四周、二十四名新生、六次训练。哪些设计有效，哪些环节只是看起来很热闹。",
+    "date": "2026-10-30",
+    "readingTime": 7,
+    "tags": [
+      "训练营",
+      "复盘",
+      "社团"
+    ],
+    "status": "published",
+    "filename": "club-freshman-camp.md"
+  },
+  {
+    "id": "club-contest-guideline",
+    "folder": "club",
+    "title": "周赛出题规范 v1.0",
+    "summary": "从难度分布、题面写作到数据验题，把我们踩过的坑固化成一份可以直接执行的出题规范。",
+    "date": "2026-10-08",
+    "readingTime": 8,
+    "tags": [
+      "出题",
+      "周赛",
+      "规范"
+    ],
+    "status": "published",
+    "filename": "club-contest-guideline.md"
+  },
+  {
+    "id": "club-knowledge-base",
+    "folder": "club",
+    "title": "社团知识库的目录结构",
+    "summary": "为什么按人、按年份建目录最终都会腐烂，以及我们尝试的按任务组织方式。",
+    "date": "2026-09-20",
+    "readingTime": 6,
+    "tags": [
+      "知识库",
+      "协作",
+      "文档"
+    ],
+    "status": "published",
+    "filename": "club-knowledge-base.md"
+  },
+  {
+    "id": "club-failed-talk",
+    "folder": "club",
+    "title": "一次失败的宣讲会",
+    "summary": "我们准备了四十页幻灯片，讲了八十分钟，然后几乎没有人报名。问题出在哪里。",
+    "date": "2026-09-02",
+    "readingTime": 5,
+    "tags": [
+      "招新",
+      "复盘",
+      "沟通"
+    ],
+    "status": "published",
+    "filename": "club-failed-talk.md"
+  },
+  {
+    "id": "club-mock-contest-sop",
+    "folder": "club",
+    "title": "组织一场五小时模拟赛的 SOP",
+    "summary": "从借机房到赛后复盘，一份按时间轴排列的模拟赛执行清单，目标是让意外尽量少。",
+    "date": "2026-08-15",
+    "readingTime": 7,
+    "tags": [
+      "模拟赛",
+      "SOP",
+      "组织"
+    ],
+    "status": "published",
+    "filename": "club-mock-contest-sop.md"
+  },
+  {
+    "id": "club-handover-checklist",
+    "folder": "club",
+    "title": "队长交接清单",
+    "summary": "交接不是把群主转让出去，而是让下一位负责人在第一周就知道资源在哪里、关键人是谁、哪些坑不能踩。",
+    "date": "2026-07-28",
+    "readingTime": 6,
+    "tags": [
+      "交接",
+      "社团",
+      "清单"
+    ],
+    "status": "published",
+    "filename": "club-handover-checklist.md"
+  },
+  {
+    "id": "misc-toolchain-2026",
+    "folder": "misc",
+    "title": "我的桌面与工具链 2026",
+    "summary": "编辑器、终端、笔记和备份。一份半年更新一次的个人工具清单，以及为什么保留它们。",
+    "date": "2026-11-06",
+    "readingTime": 6,
+    "tags": [
+      "工具",
+      "效率",
+      "随笔"
+    ],
+    "status": "published",
+    "filename": "misc-toolchain-2026.md"
+  },
+  {
+    "id": "misc-clean-code",
+    "folder": "misc",
+    "title": "读《代码整洁之道》之后",
+    "summary": "不打算照搬书里每一条规则，只记录三个真正改变我写代码方式的地方。",
+    "date": "2026-10-20",
+    "readingTime": 5,
+    "tags": [
+      "阅读",
+      "代码",
+      "习惯"
+    ],
+    "status": "published",
+    "filename": "misc-clean-code.md"
+  },
+  {
+    "id": "misc-letter-to-sophomore",
+    "folder": "misc",
+    "title": "写给大二的自己",
+    "summary": "关于成绩、竞赛、社团和那些没做成的计划。一篇稍微诚实的阶段总结。",
+    "date": "2026-09-24",
+    "readingTime": 5,
+    "tags": [
+      "总结",
+      "成长",
+      "随笔"
+    ],
+    "status": "published",
+    "filename": "misc-letter-to-sophomore.md"
+  },
+  {
+    "id": "misc-markdown-convention",
+    "folder": "misc",
+    "title": "Markdown 写作约定",
+    "summary": "一套给自己的写作规范：标题只到三级、代码永远带语言、随笔每段不超过四行。",
+    "date": "2026-09-05",
+    "readingTime": 4,
+    "tags": [
+      "写作",
+      "Markdown",
+      "约定"
+    ],
+    "status": "published",
+    "filename": "misc-markdown-convention.md"
+  },
+  {
+    "id": "misc-git-notes",
+    "folder": "misc",
+    "title": "用 Git 管理笔记的一点心得",
+    "summary": "不追求复杂分支模型，只用提交、标签和备份三件事，让笔记可追溯、可迁移。",
+    "date": "2026-08-18",
+    "readingTime": 5,
+    "tags": [
+      "Git",
+      "笔记",
+      "工作流"
+    ],
+    "status": "published",
+    "filename": "misc-git-notes.md"
+  },
+  {
+    "id": "misc-sunday-walk",
+    "folder": "misc",
+    "title": "一个周日下午的散步",
+    "summary": "从训练室出来，沿着河走了两个小时。没有拍很多照片，也没有想清楚任何一道题。",
+    "date": "2026-07-26",
+    "readingTime": 3,
+    "tags": [
+      "生活",
+      "散步",
+      "随笔"
+    ],
+    "status": "published",
+    "filename": "misc-sunday-walk.md"
+  }
+]

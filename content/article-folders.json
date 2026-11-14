@@ -1,0 +1,38 @@
+[
+  {
+    "id": "icpc",
+    "name": "ICPC 题解",
+    "en": "ICPC Solutions",
+    "description": "从区域赛到训练赛，把每道题的思路、证明与实现都留在这里。",
+    "glyph": "01",
+    "accent": "#34584b",
+    "soft": "#edf3ef"
+  },
+  {
+    "id": "algorithms",
+    "name": "算法笔记",
+    "en": "Algorithms",
+    "description": "数据结构、图论、动态规划，以及写给未来的自己的复习卡片。",
+    "glyph": "02",
+    "accent": "#8a6b4c",
+    "soft": "#f5efe6"
+  },
+  {
+    "id": "club",
+    "name": "社团建设笔记",
+    "en": "Club Notes",
+    "description": "关于一个算法社团如何被认真经营：活动、训练、协作与交接。",
+    "glyph": "03",
+    "accent": "#4d6172",
+    "soft": "#eef2f5"
+  },
+  {
+    "id": "misc",
+    "name": "杂物",
+    "en": "Odds & Ends",
+    "description": "工具、阅读、生活，以及那些暂时无处安放的小想法。",
+    "glyph": "04",
+    "accent": "#7a5c63",
+    "soft": "#f5eef0"
+  }
+]

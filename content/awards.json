@@ -1,0 +1,74 @@
+[
+  {
+    "title": "ICPC 国际大学生程序设计竞赛",
+    "detail": "亚洲区域赛 · 南京站",
+    "honor": "铜奖",
+    "date": "2026.11",
+    "year": "2026",
+    "issuer": "ICPC Asia Nanjing Regional Contest",
+    "description": "与队友在五小时内完成七题，主要负责图论与构造题。",
+    "tone": "sage",
+    "id": "icpc",
+    "status": "published"
+  },
+  {
+    "title": "中国大学生程序设计竞赛",
+    "detail": "省赛 · 团队赛",
+    "honor": "金奖",
+    "date": "2026.05",
+    "year": "2026",
+    "issuer": "CCPC 省赛组委会",
+    "description": "三人队伍 Rank 6，赛中完成了两道网络流题的建模与实现。",
+    "tone": "sand",
+    "id": "award-02",
+    "status": "published"
+  },
+  {
+    "title": "蓝桥杯全国软件和信息技术专业人才大赛",
+    "detail": "C/C++ 程序设计 · 大学 B 组",
+    "honor": "国赛一等奖",
+    "date": "2026.06",
+    "year": "2026",
+    "issuer": "工业和信息化部人才交流中心",
+    "description": "备赛期间系统地重做了动态规划与搜索专题。",
+    "tone": "mist",
+    "id": "award-03",
+    "status": "published"
+  },
+  {
+    "title": "校 ACM 新生程序设计竞赛",
+    "detail": "个人赛",
+    "honor": "冠军",
+    "date": "2025.12",
+    "year": "2025",
+    "issuer": "校 ACM/ICPC 集训队",
+    "description": "第一次在校级比赛里拿到第一名，也是开始认真训练的原因。",
+    "tone": "rose",
+    "id": "acm",
+    "status": "published"
+  },
+  {
+    "title": "校级优秀学生一等奖学金",
+    "detail": "学业与综合表现",
+    "honor": "一等奖",
+    "date": "2026.09",
+    "year": "2026",
+    "issuer": "计算机学院",
+    "description": "大一学年综合测评排名前 5%。",
+    "tone": "sand",
+    "id": "award-05",
+    "status": "published"
+  },
+  {
+    "title": "社团优秀学生负责人",
+    "detail": "ACM 协会 · 训练部",
+    "honor": "优秀负责人",
+    "date": "2026.06",
+    "year": "2026",
+    "issuer": "校学生社团联合会",
+    "description": "组织新生训练营与学期内共十二场周赛。",
+    "tone": "sage",
+    "id": "award-06",
+    "status": "published"
+  }
+]

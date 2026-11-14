@@ -1,0 +1,152 @@
+[
+  {
+    "id": "mountains",
+    "title": "山野之间",
+    "en": "Between Mountains",
+    "description": "周末向城外走，山脊、云和晚风。",
+    "date": "2026.10",
+    "cover": "assets/gallery/mountains-1.svg",
+    "photos": [
+      {
+        "src": "assets/gallery/mountains-1.svg",
+        "alt": "晨雾中的层叠山脊",
+        "caption": "清晨六点的山脊，云还没有散。"
+      },
+      {
+        "src": "assets/gallery/mountains-2.svg",
+        "alt": "夕阳下的山峰与松树剪影",
+        "caption": "下山前最后一段光线。"
+      },
+      {
+        "src": "assets/gallery/mountains-3.svg",
+        "alt": "月光下的山谷与远处小屋",
+        "caption": "露营地熄灯之后。"
+      }
+    ]
+  },
+  {
+    "id": "city",
+    "title": "城市切片",
+    "en": "City Fragments",
+    "description": "玻璃、路灯和行人，构成一座城市的日常切面。",
+    "date": "2026.09",
+    "cover": "assets/gallery/city-1.svg",
+    "photos": [
+      {
+        "src": "assets/gallery/city-1.svg",
+        "alt": "暮色中的城市高楼与亮起的窗户",
+        "caption": "晚高峰结束前的十分钟。"
+      },
+      {
+        "src": "assets/gallery/city-2.svg",
+        "alt": "雨夜街道与霓虹灯倒影",
+        "caption": "雨落在便利店门口。"
+      },
+      {
+        "src": "assets/gallery/city-3.svg",
+        "alt": "几何线条构成的天桥与行人",
+        "caption": "天桥下的一小片秩序。"
+      }
+    ]
+  },
+  {
+    "id": "coast",
+    "title": "海风来信",
+    "en": "Letters from the Sea",
+    "description": "潮汐、岛屿和一整个下午的蓝。",
+    "date": "2026.08",
+    "cover": "assets/gallery/coast-1.svg",
+    "photos": [
+      {
+        "src": "assets/gallery/coast-1.svg",
+        "alt": "蓝色海面上的一道白色浪花",
+        "caption": "正午的海，亮得睁不开眼。"
+      },
+      {
+        "src": "assets/gallery/coast-2.svg",
+        "alt": "沙滩上的脚印与远处的礁石",
+        "caption": "退潮以后，脚印很快会被抹平。"
+      },
+      {
+        "src": "assets/gallery/coast-3.svg",
+        "alt": "落日下的海平线与归航的船",
+        "caption": "最后一班船回港。"
+      }
+    ]
+  },
+  {
+    "id": "campus",
+    "title": "校园四季",
+    "en": "Campus Seasons",
+    "description": "从图书馆到训练室，记录熟悉得快要忽略的风景。",
+    "date": "2026.06",
+    "cover": "assets/gallery/campus-1.svg",
+    "photos": [
+      {
+        "src": "assets/gallery/campus-1.svg",
+        "alt": "春日校园里开花的树与长椅",
+        "caption": "三月，教学楼后面的花开了。"
+      },
+      {
+        "src": "assets/gallery/campus-2.svg",
+        "alt": "夏天树荫下通往图书馆的路",
+        "caption": "去图书馆的第三条路。"
+      },
+      {
+        "src": "assets/gallery/campus-3.svg",
+        "alt": "秋日校园的银杏与骑行的人",
+        "caption": "秋天很短，银杏叶更短。"
+      }
+    ]
+  },
+  {
+    "id": "still",
+    "title": "日常静物",
+    "en": "Quiet Objects",
+    "description": "桌面、杯子、书和光，练习看见每天经过的东西。",
+    "date": "2026.05",
+    "cover": "assets/gallery/still-1.svg",
+    "photos": [
+      {
+        "src": "assets/gallery/still-1.svg",
+        "alt": "桌面上的陶瓷杯与摊开的书",
+        "caption": "上午十点，光正好落在书页上。"
+      },
+      {
+        "src": "assets/gallery/still-2.svg",
+        "alt": "木桌上插着枝条的玻璃花瓶",
+        "caption": "从实验室门口捡回来的枝条。"
+      },
+      {
+        "src": "assets/gallery/still-3.svg",
+        "alt": "窗边叠放的书与一副眼镜",
+        "caption": "看不完的书，和需要擦干净的镜片。"
+      }
+    ]
+  },
+  {
+    "id": "light",
+    "title": "光影实验",
+    "en": "Studies in Light",
+    "description": "一些没有主题的尝试：影子、色块和曝光。",
+    "date": "2026.04",
+    "cover": "assets/gallery/light-1.svg",
+    "photos": [
+      {
+        "src": "assets/gallery/light-1.svg",
+        "alt": "白色墙面上的弧形光影",
+        "caption": "午后，百叶窗投下的弧线。"
+      },
+      {
+        "src": "assets/gallery/light-2.svg",
+        "alt": "黑色背景上的暖色色块",
+        "caption": "颜色练习 01。"
+      },
+      {
+        "src": "assets/gallery/light-3.svg",
+        "alt": "玻璃折射出的彩虹光斑",
+        "caption": "把水杯放在阳光下。"
+      }
+    ]
+  }
+]

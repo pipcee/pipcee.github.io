@@ -1,0 +1,23 @@
+{
+  "protocol": "brings-blog-content/1",
+  "version": 1794668149,
+  "generatedAt": "2026-11-14T22:55:49+0800",
+  "files": {
+    "site": "site.json",
+    "awards": "awards.json",
+    "articleFolders": "article-folders.json",
+    "gallery": "gallery.json",
+    "resources": "resources.json",
+    "notesIndex": "notes-index.json",
+    "noteBodyPattern": "notes/{id}.json"
+  },
+  "counts": {
+    "awards": 6,
+    "folders": 4,
+    "albums": 6,
+    "photos": 18,
+    "notes": 24,
+    "resources": 9,
+    "media": 0
+  }
+}
