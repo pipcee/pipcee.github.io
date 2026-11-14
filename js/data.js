@@ -24,7 +24,7 @@ window.BLOG_DATA.profile = {
     detail: "2025 级 · 计算机科学与技术",
     term: "2026 秋季学期",
   },
-  avatar: "assets/AR.png",
+  avatar: "assets/AR.jpg",
   avatarAlt: "Bring 的个人照片",
   intro:
     "你好，我是 Bring。一个还在学着把问题想清楚、把代码写干净的大二学生。喜欢算法竞赛里的推演，也喜欢在周末带着相机到处走。",

@@ -27,7 +27,7 @@ window.BLOG_API_CONFIG = {
   function fetchJSON(path) {
     return fetch(path, {
       headers: { Accept: "application/json" },
-      cache: "no-cache",
+      cache: "no-store",
     }).then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status + " · " + path);
       return res.json();
