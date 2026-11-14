@@ -1,20 +1,5 @@
 [
   {
-    "id": "note-4cf1378c",
-    "title": "回路测试笔记",
-    "folder": "icpc",
-    "filename": "roundtrip.md",
-    "summary": "",
-    "date": "2026-11-14",
-    "readingTime": 1,
-    "tags": [],
-    "status": "published",
-    "size": "79 B",
-    "words": 28,
-    "createdAt": "2026-11-14 22:57",
-    "publishedAt": "2026-11-14 22:57"
-  },
-  {
     "id": "icpc-nanjing-2026",
     "folder": "icpc",
     "title": "2026 ICPC 南京站 · 从热身赛到正赛的 72 小时",
