@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bring 的笔记列表：按文件夹分类，分页浏览。">
+  <meta name="theme-color" content="#ffffff">
+  <title>笔记列表 — Bring`s Blog</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="notes">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand-mini" href="index.html" aria-label="Bring`s Blog 首页">
+        <span>Bring`s</span><span class="brand-mini__suffix">Blog</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+        <span>菜单</span><span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">个人介绍</a>
+        <a href="articles.html" data-nav="articles">文章</a>
+        <a href="gallery.html" data-nav="gallery">图库</a>
+        <a href="resources.html" data-nav="resources">资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page notes-page" id="main">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="articles.html">文章</a>
+      <span class="breadcrumb__sep" aria-hidden="true">/</span>
+      <span id="notes-crumb" aria-current="page">笔记列表</span>
+    </nav>
+
+    <section class="notes-hero" aria-labelledby="notes-title">
+      <div class="notes-hero__copy">
+        <p class="eyebrow" id="notes-eyebrow"><span>Folder</span><span class="eyebrow__line" aria-hidden="true"></span>Notes</p>
+        <h1 class="notes-title" id="notes-title">笔记列表<span class="title-dot">.</span></h1>
+        <p class="notes-description" id="notes-description">正在整理这个文件夹里的笔记…</p>
+      </div>
+      <div class="notes-stats" aria-label="笔记统计">
+        <div class="notes-stat">
+          <strong id="notes-total">--</strong>
+          <span>Notes</span>
+        </div>
+        <div class="notes-stat">
+          <strong id="notes-page-current">--</strong>
+          <span>Page</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes-list-section" aria-labelledby="notes-list-heading">
+      <div class="notes-list-heading">
+        <h2 class="sr-only" id="notes-list-heading">笔记列表</h2>
+        <span id="notes-list-label">Index</span>
+        <span>按日期倒序 · 每页 4 篇</span>
+      </div>
+
+      <div class="notes-list" id="notes-list" aria-live="polite">
+        <div class="loading-state"><p>正在读取笔记…</p></div>
+      </div>
+      <div id="notes-pagination"></div>
+
+      <p class="notes-back">
+        <a class="back-link" href="articles.html">← 返回全部文件夹</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year>2026</span> Bring`s Blog · 保持好奇，持续记录。</p>
+      <div class="footer-links">
+        <a href="mailto:hello@brings.blog">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [后端预留] 笔记列表由
+       GET /api/article-folders/:folderId/notes?page=&pageSize=
+       返回，响应包含 items / page / pageSize / total / totalPages 与 folder。 -->
+  <script src="js/data.js"></script>
+  <script src="js/notes-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>

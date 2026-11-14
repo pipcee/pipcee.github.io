@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bring`s Blog：算法竞赛、学习笔记、生活图集与资源分享。">
+  <meta name="theme-color" content="#ffffff">
+  <title>Bring`s Blog — 首页</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page" data-page="home">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <canvas id="bird-canvas" aria-hidden="true"></canvas>
+  <p class="sr-only">首页背景中有 25 只使用群集算法游动的鸟，它们会避开鼠标指针。</p>
+
+  <div class="home-shell">
+    <div class="home-topline" aria-hidden="true">
+      <span>Personal notebook / 2026</span>
+      <span class="home-topline__right">Computer science · ICPC</span>
+    </div>
+
+    <main class="home-main" id="main">
+      <p class="home-kicker">Notes, pictures &amp; small things</p>
+      <h1 class="home-title">Bring`s <span class="home-title__blog">Blog</span></h1>
+      <p class="home-subtitle">
+        把算法、比赛、社团与生活收进同一本笔记。<br>
+        保持好奇，也保持记录。
+      </p>
+
+      <nav class="home-nav" aria-label="主要页面">
+        <a class="home-nav__item" href="about.html">
+          <span class="home-nav__top">
+            <span class="home-nav__num">01</span>
+            <svg class="home-nav__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="home-nav__bottom">
+            <span class="home-nav__zh">个人介绍</span>
+            <span class="home-nav__en">About</span>
+          </span>
+        </a>
+
+        <a class="home-nav__item" href="articles.html">
+          <span class="home-nav__top">
+            <span class="home-nav__num">02</span>
+            <svg class="home-nav__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="home-nav__bottom">
+            <span class="home-nav__zh">文章</span>
+            <span class="home-nav__en">Notes</span>
+          </span>
+        </a>
+
+        <a class="home-nav__item" href="gallery.html">
+          <span class="home-nav__top">
+            <span class="home-nav__num">03</span>
+            <svg class="home-nav__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="home-nav__bottom">
+            <span class="home-nav__zh">图库</span>
+            <span class="home-nav__en">Gallery</span>
+          </span>
+        </a>
+
+        <a class="home-nav__item" href="resources.html">
+          <span class="home-nav__top">
+            <span class="home-nav__num">04</span>
+            <svg class="home-nav__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="home-nav__bottom">
+            <span class="home-nav__zh">资源</span>
+            <span class="home-nav__en">Resources</span>
+          </span>
+        </a>
+      </nav>
+
+      <p class="home-hint">
+        <span class="home-hint__dot" aria-hidden="true"></span>
+        移动鼠标，25 只鸟会为你让路
+      </p>
+    </main>
+
+    <div class="home-bottom">
+      <span class="home-bottom__birds" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none">
+          <path d="M14 2.5 2.5 7.2l4.1 1.4L8 13l2-4.6L14 2.5Z" fill="currentColor"/>
+        </svg>
+        25 birds / torus flock
+      </span>
+      <span class="home-bottom__links">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@brings.blog">Email</a>
+      </span>
+      <span>HTML / CSS / JS</span>
+    </div>
+  </div>
+
+  <!-- [前端效果] 品牌与四个导航为静态 HTML；25 只鸟由 js/home.js 在
+       Canvas 2D 中本地计算，无后端依赖。
+       [后端预留] 若导航与站点信息改由后台配置，可接入 GET /api/site。 -->
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

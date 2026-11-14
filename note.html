@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bring 的笔记：解题思路、算法整理与生活记录。">
+  <meta name="theme-color" content="#ffffff">
+  <title>笔记 — Bring`s Blog</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="note">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand-mini" href="index.html" aria-label="Bring`s Blog 首页">
+        <span>Bring`s</span><span class="brand-mini__suffix">Blog</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+        <span>菜单</span><span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">个人介绍</a>
+        <a href="articles.html" data-nav="articles">文章</a>
+        <a href="gallery.html" data-nav="gallery">图库</a>
+        <a href="resources.html" data-nav="resources">资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page note-page" id="main">
+    <nav class="breadcrumb note-breadcrumb" aria-label="面包屑">
+      <a href="articles.html">文章</a>
+      <span class="breadcrumb__sep" aria-hidden="true">/</span>
+      <a href="notes.html" id="note-crumb-folder">笔记</a>
+      <span class="breadcrumb__sep" aria-hidden="true">/</span>
+      <span id="note-crumb-title" aria-current="page">正在打开</span>
+    </nav>
+
+    <article class="note-shell" id="note-shell">
+      <header class="note-header">
+        <p class="eyebrow" id="note-kicker"><span>Note</span><span class="eyebrow__line" aria-hidden="true"></span>Reading</p>
+        <h1 class="note-title" id="note-title">正在打开笔记…</h1>
+        <p class="note-summary" id="note-summary"></p>
+        <div class="note-meta" id="note-meta"></div>
+      </header>
+
+      <div class="note-body" id="note-body">
+        <div class="loading-state"><p>正在准备内容…</p></div>
+      </div>
+
+      <div class="note-end" id="note-end" hidden>
+        <span>End of note</span>
+        <a class="back-link" id="note-back" href="notes.html">← 返回列表</a>
+      </div>
+    </article>
+
+    <nav class="note-series" id="note-series" aria-label="相邻笔记"></nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year>2026</span> Bring`s Blog · 保持好奇，持续记录。</p>
+      <div class="footer-links">
+        <a href="mailto:hello@brings.blog">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [后端预留] 正文与上一篇/下一篇由 GET /api/notes/:id 返回。
+       后端应返回经过安全清洗的 HTML，并包含 folder / previous / next。 -->
+  <script src="js/data.js"></script>
+  <script src="js/notes-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/note.js"></script>
+</body>
+</html>

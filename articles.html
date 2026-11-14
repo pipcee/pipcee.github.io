@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bring 的文章文件夹：ICPC 题解、算法笔记、社团建设笔记与杂物。">
+  <meta name="theme-color" content="#ffffff">
+  <title>文章 — Bring`s Blog</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="articles">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand-mini" href="index.html" aria-label="Bring`s Blog 首页">
+        <span>Bring`s</span><span class="brand-mini__suffix">Blog</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+        <span>菜单</span><span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">个人介绍</a>
+        <a href="articles.html" data-nav="articles">文章</a>
+        <a href="gallery.html" data-nav="gallery">图库</a>
+        <a href="resources.html" data-nav="resources">资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div class="page-intro__copy">
+        <p class="eyebrow"><span>02</span><span class="eyebrow__line" aria-hidden="true"></span>Writing</p>
+        <h1 class="page-title" id="page-title">文章<span class="title-dot">.</span></h1>
+        <p class="page-lede">
+          四个文件夹，二十四篇笔记。写题、做事、读书，<br>
+          把当时想明白的和还没想明白的都留下来。
+        </p>
+        <p class="page-statline" id="articles-meta">
+          <span>04 folders</span><span aria-hidden="true">/</span><span>按更新时间排序</span>
+        </p>
+      </div>
+      <p class="page-folio" aria-hidden="true">02</p>
+    </section>
+
+    <section class="folders-section" aria-labelledby="folders-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>Index</span><span class="eyebrow__line" aria-hidden="true"></span>Folders</p>
+          <h2 id="folders-heading">打开一个文件夹<span class="title-dot">.</span></h2>
+        </div>
+        <p>点击进入笔记列表</p>
+      </div>
+
+      <div class="folder-grid" id="folder-grid" aria-live="polite">
+        <div class="loading-state"><p>正在打开文件夹…</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year>2026</span> Bring`s Blog · 保持好奇，持续记录。</p>
+      <div class="footer-links">
+        <a href="mailto:hello@brings.blog">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [后端预留] 文件夹由 GET /api/article-folders 返回；
+       当前使用 js/notes-data.js + js/api.js 的本地 Mock。 -->
+  <script src="js/data.js"></script>
+  <script src="js/notes-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/articles.js"></script>
+</body>
+</html>

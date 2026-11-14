@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="2" seed="9" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="linear" slope=".11"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="sky7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#edf1ed"/><stop offset="0.55" stop-color="#dce7e4"/><stop offset="1" stop-color="#cadad6"/></linearGradient><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#72a7b4"/><stop offset="0.6" stop-color="#3b7689"/><stop offset="1" stop-color="#255465"/></linearGradient>
+</defs>
+<rect width="1200" height="900" fill="url(#sky7)"/>
+<circle cx="915" cy="154" r="66" fill="#fffaf0" opacity=".75"/>
+<path d="M0 450h1200v450H0Z" fill="url(#sea)"/>
+<path d="M0 450h1200" stroke="#f0f5ee" stroke-width="2" opacity=".55"/>
+<path d="M80 590c70-18 155-16 220 3s145 19 228 1" stroke="#edf3ee" stroke-width="3" fill="none" opacity="0.65" stroke-linecap="round"/><path d="M300 662c70-18 155-16 220 3s145 19 228 1" stroke="#edf3ee" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/><path d="M610 618c70-18 155-16 220 3s145 19 228 1" stroke="#edf3ee" stroke-width="3" fill="none" opacity="0.35" stroke-linecap="round"/><path d="M810 690c70-18 155-16 220 3s145 19 228 1" stroke="#edf3ee" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round"/><path d="M990 600c70-18 155-16 220 3s145 19 228 1" stroke="#edf3ee" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M160 740c70-18 155-16 220 3s145 19 228 1" stroke="#edf3ee" stroke-width="2" fill="none" opacity="0.45" stroke-linecap="round"/>
+<path d="M0 840c210-24 430-16 610 0s370 15 590-4v64H0Z" fill="#2e5c69" opacity=".55"/>
+<g opacity=".45" fill="none" stroke="#f6f2e5" stroke-width="2" stroke-linecap="round">
+<path d="M220 220c8-10 19-10 27 0 8-10 19-10 27 0"/>
+<path d="M285 250c6-7 14-7 20 0 6-7 14-7 20 0"/>
+</g>
+<rect width="1200" height="900" filter="url(#grain)" opacity=".5"/>
+</svg>

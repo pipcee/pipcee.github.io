@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="关于 Bring：一名大二计算机专业学生的自我介绍、当前状态与个人奖项。">
+  <meta name="theme-color" content="#ffffff">
+  <title>关于我 — Bring`s Blog</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand-mini" href="index.html" aria-label="Bring`s Blog 首页">
+        <span>Bring`s</span><span class="brand-mini__suffix">Blog</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+        <span>菜单</span><span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">个人介绍</a>
+        <a href="articles.html" data-nav="articles">文章</a>
+        <a href="gallery.html" data-nav="gallery">图库</a>
+        <a href="resources.html" data-nav="resources">资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div class="page-intro__copy">
+        <p class="eyebrow"><span>01</span><span class="eyebrow__line" aria-hidden="true"></span>About</p>
+        <h1 class="page-title" id="page-title">关于我<span class="title-dot">.</span></h1>
+        <p class="page-lede">
+          一名大二学生，正在学习如何把复杂的问题讲清楚。<br>
+          这里是一些关于我的基本信息，以及一路上收到的鼓励。
+        </p>
+      </div>
+      <p class="page-folio" aria-hidden="true">01</p>
+    </section>
+
+    <section class="about-hero" aria-labelledby="about-name">
+      <figure class="about-portrait" data-reveal>
+        <div class="about-portrait__frame">
+          <img id="profile-avatar" src="assets/avatar.svg" alt="Bring 的头像：戴眼镜、穿深色上衣的年轻人插画" width="800" height="1000">
+        </div>
+        <figcaption class="about-portrait__caption">
+          <span>FIG. 01</span>
+          <span id="profile-handle">@bring</span>
+        </figcaption>
+      </figure>
+
+      <div class="about-copy" data-reveal>
+        <p class="eyebrow">Computer science · Undergraduate</p>
+        <h2 class="about-name" id="about-name">你好，我是 <em>Bring</em><span class="title-dot">.</span></h2>
+
+        <div class="about-status" aria-label="目前状态">
+          <span class="about-status__label" id="profile-status-label">目前状态</span>
+          <strong class="about-status__value" id="profile-status-value">大二</strong>
+          <span class="about-status__separator" aria-hidden="true"></span>
+          <span class="about-status__detail" id="profile-status-detail">2025 级 · 计算机科学与技术</span>
+          <span class="about-status__dot" aria-hidden="true"></span>
+          <span class="about-status__term" id="profile-status-term">2026 秋季学期</span>
+        </div>
+
+        <div class="about-bio" id="profile-bio">
+          <p>你好，我是 Bring。一个还在学着把问题想清楚、把代码写干净的大二学生。喜欢算法竞赛里的推演，也喜欢在周末带着相机到处走。</p>
+          <p>目前在校队训练 ICPC，主要写图论与数据结构。这个博客是一本公开的练习册。</p>
+        </div>
+
+        <dl class="about-now" id="profile-now" aria-label="最近在做的事">
+          <div>
+            <dt>在学</dt>
+            <dd>图论 / 编译原理</dd>
+          </div>
+          <div>
+            <dt>在做</dt>
+            <dd>ICPC 校队训练</dd>
+          </div>
+          <div>
+            <dt>在写</dt>
+            <dd>每周一篇笔记</dd>
+          </div>
+        </dl>
+
+        <div class="about-footer">
+          <ul class="about-socials" id="profile-socials" aria-label="社交链接">
+            <li><a class="text-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a class="text-link" href="mailto:hello@brings.blog">Email <span aria-hidden="true">↗</span></a></li>
+          </ul>
+          <p class="about-location" id="profile-location">合肥 · 中国</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="awards-section" aria-labelledby="awards-title" data-reveal>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>02</span><span class="eyebrow__line" aria-hidden="true"></span>Selected awards</p>
+          <h2 id="awards-title">个人奖项<span class="title-dot">.</span></h2>
+        </div>
+        <p class="awards-note" id="awards-note">记录一些被肯定的时刻</p>
+      </div>
+
+      <div class="awards-grid" id="awards-grid" aria-live="polite">
+        <div class="loading-state"><p>正在整理奖项…</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year>2026</span> Bring`s Blog · 保持好奇，持续记录。</p>
+      <div class="footer-links">
+        <a href="mailto:hello@brings.blog">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [后端预留] 本页内容通过 BlogAPI 获取：
+       GET /api/profile · GET /api/awards · GET /api/overview。
+       当前由 js/data.js + js/notes-data.js 提供 Mock 数据。 -->
+  <script src="js/data.js"></script>
+  <script src="js/notes-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>

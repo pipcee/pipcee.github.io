@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bring 的资源下载：ICPC 模板、算法速查、社团工具箱与写作约定，包含 MD5 与版本信息。">
+  <meta name="theme-color" content="#ffffff">
+  <title>资源 — Bring`s Blog</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="resources">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand-mini" href="index.html" aria-label="Bring`s Blog 首页">
+        <span>Bring`s</span><span class="brand-mini__suffix">Blog</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+        <span>菜单</span><span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">个人介绍</a>
+        <a href="articles.html" data-nav="articles">文章</a>
+        <a href="gallery.html" data-nav="gallery">图库</a>
+        <a href="resources.html" data-nav="resources">资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div class="page-intro__copy">
+        <p class="eyebrow"><span>04</span><span class="eyebrow__line" aria-hidden="true"></span>Resources</p>
+        <h1 class="page-title" id="page-title">资源<span class="title-dot">.</span></h1>
+        <p class="page-lede">
+          整理好的模板、清单和速查文件，放在这里方便取用。<br>
+          每个文件都标注了版本、大小和 MD5。
+        </p>
+        <p class="page-statline" id="resources-meta">
+          <span>09 files</span><span aria-hidden="true">/</span><span>本地示例文件</span>
+        </p>
+      </div>
+      <p class="page-folio" aria-hidden="true">04</p>
+    </section>
+
+    <section class="resources-section" aria-labelledby="resources-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>Index</span><span class="eyebrow__line" aria-hidden="true"></span>Downloads</p>
+          <h2 id="resources-heading">下载文件<span class="title-dot">.</span></h2>
+        </div>
+        <p>URL 打开来源 · 下载保存文件</p>
+      </div>
+
+      <p class="resources-note">
+        <span aria-hidden="true">＊</span>
+        下载后可对照 MD5 校验文件完整性。示例文件仅用于演示。
+      </p>
+
+      <div class="resource-list" id="resource-list" aria-live="polite">
+        <div class="loading-state"><p>正在读取文件列表…</p></div>
+      </div>
+      <div id="resource-pagination"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year>2026</span> Bring`s Blog · 保持好奇，持续记录。</p>
+      <div class="footer-links">
+        <a href="mailto:hello@brings.blog">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [后端预留] 资源分页由 GET /api/resources?page=&pageSize= 返回；
+       下载地址应为后端签发的临时 URL，下载行为通过
+       POST /api/downloads/:id/log 记录。当前为本地示例文件。 -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/resources.js"></script>
+</body>
+</html>

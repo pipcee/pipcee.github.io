@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bring 的图库：山野、城市、海岸、校园、静物与光影，每行三个图集文件夹。">
+  <meta name="theme-color" content="#ffffff">
+  <title>图库 — Bring`s Blog</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand-mini" href="index.html" aria-label="Bring`s Blog 首页">
+        <span>Bring`s</span><span class="brand-mini__suffix">Blog</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+        <span>菜单</span><span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">个人介绍</a>
+        <a href="articles.html" data-nav="articles">文章</a>
+        <a href="gallery.html" data-nav="gallery">图库</a>
+        <a href="resources.html" data-nav="resources">资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div class="page-intro__copy">
+        <p class="eyebrow"><span>03</span><span class="eyebrow__line" aria-hidden="true"></span>Gallery</p>
+        <h1 class="page-title" id="page-title">图库<span class="title-dot">.</span></h1>
+        <p class="page-lede">
+          六个装进文件夹的片段：山野、城市、海岸、校园、静物和光。<br>
+          点击任意封面，翻开一页看看。
+        </p>
+        <p class="page-statline" id="gallery-meta">
+          <span>06 albums</span><span aria-hidden="true">/</span><span>本地图片文件</span>
+        </p>
+      </div>
+      <p class="page-folio" aria-hidden="true">03</p>
+    </section>
+
+    <section class="gallery-section" aria-labelledby="gallery-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>Index</span><span class="eyebrow__line" aria-hidden="true"></span>Albums</p>
+          <h2 id="gallery-heading">图片文件夹<span class="title-dot">.</span></h2>
+        </div>
+        <p>每行三个 · 点击查看图片</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+        <div class="loading-state"><p>正在整理图片…</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span data-year>2026</span> Bring`s Blog · 保持好奇，持续记录。</p>
+      <div class="footer-links">
+        <a href="mailto:hello@brings.blog">Email</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="album-modal" id="album-modal" hidden>
+    <div class="album-modal__backdrop" data-modal-close></div>
+    <div class="album-dialog" role="dialog" aria-modal="true" aria-labelledby="album-modal-title" aria-describedby="album-modal-description">
+      <button class="album-modal__close" type="button" data-modal-close aria-label="关闭图片查看器">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="album-stage">
+        <div class="album-stage__frame">
+          <img id="album-image" src="" alt="">
+          <button class="album-nav album-nav--prev" id="album-prev" type="button" aria-label="上一张图片">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 4 5 9l6 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="album-nav album-nav--next" id="album-next" type="button" aria-label="下一张图片">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m7 4 6 5-6 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="album-stage__caption">
+          <p id="album-caption" aria-live="polite"></p>
+          <span id="album-photo-index" class="mono">01 / 03</span>
+        </div>
+      </div>
+
+      <aside class="album-info">
+        <div class="album-info__head">
+          <p class="eyebrow"><span>Album</span><span class="eyebrow__line" aria-hidden="true"></span>Viewer</p>
+          <h2 id="album-modal-title"></h2>
+          <p class="album-info__description" id="album-modal-description"></p>
+        </div>
+
+        <div class="album-info__meta">
+          <span id="album-date"></span>
+          <span id="album-photo-count"></span>
+        </div>
+
+        <div class="album-thumbs" id="album-thumbs" aria-label="图集缩略图"></div>
+
+        <p class="album-info__hint">
+          <span><kbd>←</kbd><kbd>→</kbd> 切换</span>
+          <span><kbd>Esc</kbd> 关闭</span>
+        </p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- [后端预留] 图集数据由 GET /api/gallery/albums 返回；
+       单张图片与封面建议由对象存储/CDN 提供，当前为本地 SVG 示例。 -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
