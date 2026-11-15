@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "award-6ed9c0a3",
+    "title": "2026 ACM-ICPC国际大学生程序设计竞赛",
+    "detail": "亚洲区域赛 武汉站",
+    "honor": "铜牌",
+    "date": "2026.11",
+    "year": "2026",
+    "issuer": "ICPC Foundation",
+    "description": "",
+    "tone": "sand",
+    "status": "published",
+    "createdAt": "2026-11-15 17:31"
+  },
+  {
+    "id": "award-8a28fa43",
+    "title": "2026 ACM-ICPC国际大学生程序设计竞赛",
+    "detail": "邀请赛 沈阳站",
+    "honor": "银牌",
+    "date": "2026.9",
+    "year": "2026",
+    "issuer": "ICPC Foundation",
+    "description": "",
+    "tone": "mist",
+    "status": "published",
+    "createdAt": "2026-11-15 17:32"
+  }
+]
