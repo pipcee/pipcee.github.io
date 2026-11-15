@@ -3627,3 +3627,16 @@ a.page-button:hover {
 
 
 
+
+
+/* 奖项标题：单行展示，不折行、不隐藏 */
+.award-card {
+  overflow: visible;
+}
+
+.award-card h3 {
+  max-width: none;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}

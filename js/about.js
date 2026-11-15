@@ -13,6 +13,25 @@
     if (node && value) node.textContent = value;
   }
 
+  var GRADE_LEVELS = ["大一", "大二", "大三", "大四", "研一", "研二", "研三"];
+
+  function gradeInfo(enrollYear) {
+    var value = Number(enrollYear);
+    if (!value) return null;
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var acadStart = month >= 9 ? year : year - 1;
+    var offset = acadStart - value;
+    if (offset < 0) offset = 0;
+    return {
+      grade: GRADE_LEVELS[Math.min(offset, GRADE_LEVELS.length - 1)],
+      term: month >= 9 || month === 1
+        ? acadStart + " 秋季学期"
+        : (acadStart + 1) + " 春季学期",
+    };
+  }
+
   function renderProfile(profile) {
     if (!profile) return;
 
@@ -26,6 +45,14 @@
     setText("profile-status-value", profile.status && profile.status.value);
     setText("profile-status-detail", profile.status && profile.status.detail);
     setText("profile-status-term", profile.status && profile.status.term);
+
+    var grade = gradeInfo(profile.enrollYear);
+    if (grade) {
+      var statusValueNode = document.getElementById("profile-status-value");
+      if (statusValueNode) statusValueNode.textContent = grade.grade;
+      setText("profile-status-term", grade.term);
+      setText("about-grade", grade.grade);
+    }
 
     var bio = document.getElementById("profile-bio");
     if (bio) {
@@ -56,9 +83,6 @@
           order +
           '">' +
           '<div class="award-card__top">' +
-          '<span class="award-index">Award / ' +
-          String(index + 1).padStart(2, "0") +
-          "</span>" +
           '<span class="award-honor">' +
           BlogUI.escapeHTML(award.honor || "获奖") +
           "</span>" +
@@ -77,7 +101,7 @@
           BlogUI.escapeHTML(award.issuer || "") +
           "</span>" +
           '<span class="award-date">' +
-          BlogUI.escapeHTML(award.date || award.year || "") +
+          BlogUI.escapeHTML(award.date || "") +
           "</span>" +
           "</div>" +
           "</article>"
