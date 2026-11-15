@@ -82,14 +82,14 @@
           '" style="--order:' +
           order +
           '">' +
-          '<div class="award-card__top">' +
+          '<div class="award-title-row">' +
+          "<h3>" +
+          BlogUI.escapeHTML(award.title) +
+          "</h3>" +
           '<span class="award-honor">' +
           BlogUI.escapeHTML(award.honor || "获奖") +
           "</span>" +
           "</div>" +
-          "<h3>" +
-          BlogUI.escapeHTML(award.title) +
-          "</h3>" +
           '<p class="award-event">' +
           BlogUI.escapeHTML(award.detail || "") +
           "</p>" +

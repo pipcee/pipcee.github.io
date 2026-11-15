@@ -3626,17 +3626,28 @@ a.page-button:hover {
 }
 
 
-
-
-
-/* 奖项标题：单行展示，不折行、不隐藏 */
-.award-card {
-  overflow: visible;
+/* 奖项：圆形色块收回卡片内 + 标题单行、等级在右 */
+.award-title-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 26px;
 }
 
-.award-card h3 {
+.award-title-row h3 {
+  flex: 1 1 auto;
+  min-width: 0;
   max-width: none;
+  margin: 0;
   white-space: nowrap;
   overflow: visible;
   text-overflow: clip;
+}
+
+.award-title-row .award-honor {
+  flex: 0 0 auto;
+  margin-top: 2px;
 }
