@@ -6,7 +6,7 @@
   <meta name="description" content="Bring 的资源下载：ICPC 模板、算法速查、社团工具箱与写作约定，包含 MD5 与版本信息。">
   <meta name="theme-color" content="#ffffff">
   <title>资源 — Bring`s Blog</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="resources">
@@ -67,10 +67,8 @@
     </div>
   </footer>
 
-  <!-- [后端预留] 资源分页由 GET /api/resources?page=&pageSize= 返回；
-       下载地址应为后端签发的临时 URL，下载行为通过
-       POST /api/downloads/:id/log 记录。当前为本地示例文件。 -->
-  <script src="js/data.js"></script>
+  <!-- 资源分页在 data/content/resources.json 上计算；
+       文件本体位于 data/files/<名称>/，由后台 control/ 上传与管理。 -->
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
   <script src="js/resources.js"></script>

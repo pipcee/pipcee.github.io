@@ -6,7 +6,7 @@
   <meta name="description" content="关于 Bring：一名大二计算机专业学生的自我介绍、当前状态与个人奖项。">
   <meta name="theme-color" content="#ffffff">
   <title>关于我 — Bring`s Blog</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="about">
@@ -46,7 +46,7 @@
     <section class="about-hero" aria-labelledby="about-name">
       <figure class="about-portrait" data-reveal>
         <div class="about-portrait__frame">
-          <img id="profile-avatar" src="assets/AR.jpg" alt="Bring 的个人照片" width="790" height="790">
+          <img id="profile-avatar" src="data/AR.jpg" alt="Bring 的个人照片" width="790" height="790">
         </div>
       </figure>
 
@@ -94,11 +94,8 @@
     </div>
   </footer>
 
-  <!-- [后端预留] 本页内容通过 BlogAPI 获取：
-       GET /api/profile · GET /api/awards · GET /api/overview。
-       当前由 js/data.js + js/notes-data.js 提供 Mock 数据。 -->
-  <script src="js/data.js"></script>
-  <script src="js/notes-data.js"></script>
+  <!-- 本页内容通过 BlogAPI 读取 data/content/site.json、awards.json，
+       统计数字由 data/content 下的索引现算。 -->
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
   <script src="js/about.js"></script>

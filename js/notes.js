@@ -25,7 +25,8 @@
     list.innerHTML =
       '<div class="error-state"><div><p>' +
       BlogUI.escapeHTML(message || "笔记加载失败，请稍后再试。") +
-      '</p><button class="button button--ghost notes-retry" type="button">重新加载</button></div></div>';
+      '</p><div class="error-state__actions"><button class="button button--ghost notes-retry" type="button">重新加载</button>' +
+      '<a class="button button--ghost" href="articles.html">返回文章首页</a></div></div></div>';
     var retry = list.querySelector(".notes-retry");
     if (retry) retry.addEventListener("click", loadNotes);
   }

@@ -1,0 +1,29 @@
+{
+  "protocol": "brings-blog-content/2",
+  "version": 1794730165,
+  "generatedAt": "2026-11-15T16:09:25+08:00",
+  "files": {
+    "site": "site.json",
+    "awards": "awards.json",
+    "articleFolders": "article-folders.json",
+    "gallery": "gallery.json",
+    "resources": "resources.json",
+    "notesIndex": "notes-index.json",
+    "noteBodyPattern": "note_html/{id}.json"
+  },
+  "paths": {
+    "noteRaw": "note_raw/{id}.md",
+    "noteHtml": "note_html/{id}.json",
+    "images": "img/",
+    "files": "files/"
+  },
+  "counts": {
+    "awards": 0,
+    "folders": 0,
+    "albums": 0,
+    "photos": 0,
+    "notes": 0,
+    "resources": 0,
+    "media": 0
+  }
+}

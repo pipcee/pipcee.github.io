@@ -6,7 +6,7 @@
   <meta name="description" content="Bring 的笔记列表：按文件夹分类，分页浏览。">
   <meta name="theme-color" content="#ffffff">
   <title>笔记列表 — Bring`s Blog</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="notes">
@@ -82,11 +82,8 @@
     </div>
   </footer>
 
-  <!-- [后端预留] 笔记列表由
-       GET /api/article-folders/:folderId/notes?page=&pageSize=
-       返回，响应包含 items / page / pageSize / total / totalPages 与 folder。 -->
-  <script src="js/data.js"></script>
-  <script src="js/notes-data.js"></script>
+  <!-- 笔记列表在 data/content/notes-index.json 上计算：
+       items / page / pageSize / total / totalPages 与 folder。 -->
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
   <script src="js/notes.js"></script>

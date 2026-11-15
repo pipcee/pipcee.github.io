@@ -79,7 +79,13 @@
       crumbFolder.href = folderHref(folder);
     }
 
-    body.innerHTML = note.body || "<p>这篇笔记还没有正文。</p>";
+    if (note.body) {
+      body.innerHTML = note.body;
+    } else {
+      body.innerHTML =
+        '<div class="empty-state"><div><h3>正文还没有生成</h3>' +
+        "<p>原始 Markdown 已经上传，等待后台把笔记处理成 HTML。</p></div></div>";
+    }
     end.hidden = false;
 
     var back = document.getElementById("note-back");

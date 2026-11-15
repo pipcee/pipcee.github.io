@@ -565,11 +565,27 @@ body.menu-open .menu-toggle__icon::after {
   line-height: 1.8;
 }
 
+.error-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 .empty-state h2 {
   margin-bottom: 8px;
   color: var(--ink);
   font-family: var(--serif);
   font-size: 26px;
+  font-weight: 400;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 21px;
   font-weight: 400;
 }
 
@@ -2136,6 +2152,45 @@ a.page-button:hover {
 
 .note-body blockquote p {
   margin: 0;
+}
+
+.note-body figure {
+  margin: 2.2em 0;
+}
+
+.note-body img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--paper-soft);
+}
+
+.note-body figcaption {
+  margin-top: 10px;
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.note-body table {
+  width: 100%;
+  margin: 1.8em 0;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.note-body th,
+.note-body td {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.note-body th {
+  color: var(--ink);
+  background: var(--paper-soft);
+  font-weight: 600;
 }
 
 .note-body code {

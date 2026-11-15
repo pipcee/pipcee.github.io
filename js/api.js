@@ -1,16 +1,15 @@
 /* ==========================================================================
    Blog API boundary.
-   界面只通过 window.BlogAPI 取数。
-   两种模式：
-     mode: "static" → 读取仓库内 content/ 目录下的自定义文件协议
-                      （由服务器端 tools/build.py 从共享存储生成）
-     mode: "mock"   → 使用 js/data.js + js/notes-data.js 的内置数据
-   文件协议见 content/manifest.json（brings-blog-content/1）。
+   界面只通过 window.BlogAPI 取数；数据唯一来源是仓库内的 data/ 目录：
+     data/content/            索引 JSON（manifest / site / awards / folders / ...）
+     data/note_html/{id}.json 已处理好的笔记正文（{ id, body }）
+   没有内置 Mock，也没有远程接口；请用 `python server.py` 启动后访问。
+   协议版本见 data/content/manifest.json（brings-blog-content/2）。
    ========================================================================== */
 window.BLOG_API_CONFIG = {
-  mode: "static",
-  contentRoot: "content/",
-  mockDelay: 0,
+  contentRoot: "data/content/",
+  dataRoot: "data/",
+  noteBodyPattern: "note_html/{id}.json",
 };
 
 (function () {
@@ -21,7 +20,11 @@ window.BLOG_API_CONFIG = {
   var loading = null;
 
   function root() {
-    return config.contentRoot || "content/";
+    return config.contentRoot || "data/content/";
+  }
+
+  function dataRoot() {
+    return config.dataRoot || "data/";
   }
 
   function fetchJSON(path) {
@@ -36,61 +39,52 @@ window.BLOG_API_CONFIG = {
 
   function loadContent() {
     if (loading) return loading;
-    var base = root();
-    loading = fetchJSON(base + "manifest.json")
-      .then(function (man) {
-        var f = man.files || {};
+
+    loading = fetchJSON(root() + "manifest.json")
+      .then(function (manifest) {
+        var files = manifest.files || {};
         return Promise.all([
-          fetchJSON(base + (f.site || "site.json")),
-          fetchJSON(base + (f.awards || "awards.json")),
-          fetchJSON(base + (f.articleFolders || "article-folders.json")),
-          fetchJSON(base + (f.gallery || "gallery.json")),
-          fetchJSON(base + (f.resources || "resources.json")),
-          fetchJSON(base + (f.notesIndex || "notes-index.json")),
-        ]).then(function (r) {
-          return {
-            mock: false,
-            base: base,
-            manifest: man,
-            site: r[0].site || {},
-            profile: r[0].profile || {},
-            awards: r[1] || [],
-            articleFolders: r[2] || [],
-            gallery: r[3] || [],
-            resources: r[4] || [],
-            notes: r[5] || [],
+          fetchJSON(root() + (files.site || "site.json")),
+          fetchJSON(root() + (files.awards || "awards.json")),
+          fetchJSON(root() + (files.articleFolders || "article-folders.json")),
+          fetchJSON(root() + (files.gallery || "gallery.json")),
+          fetchJSON(root() + (files.resources || "resources.json")),
+          fetchJSON(root() + (files.notesIndex || "notes-index.json")),
+        ]).then(function (result) {
+          store = {
+            base: root(),
+            dataRoot: dataRoot(),
+            manifest: manifest,
+            site: result[0].site || {},
+            profile: result[0].profile || {},
+            awards: result[1] || [],
+            articleFolders: result[2] || [],
+            gallery: result[3] || [],
+            resources: result[4] || [],
+            notes: result[5] || [],
           };
+          return store;
         });
       })
-      .catch(function (err) {
-        if (window.console) {
-          console.warn("[BlogAPI] 内容文件加载失败，回退到内置 Mock：" + err.message);
-        }
-        return { mock: true };
+      .catch(function (error) {
+        loading = null;
+        throw new Error(
+          "内容文件加载失败（" +
+            error.message +
+            "）。请确认已运行 python server.py，并通过 http://127.0.0.1:4173/ 访问。"
+        );
       });
+
     return loading;
   }
 
   function ready() {
-    if (config.mode === "mock") return Promise.resolve();
+    if (store) return Promise.resolve(store);
     return loadContent();
   }
 
   function data() {
-    if (store && !store.mock) return store;
-    return window.BLOG_DATA || {};
-  }
-
-  function isStatic() {
-    return !!(store && !store.mock);
-  }
-
-  function delayed(value) {
-    return new Promise(function (resolve) {
-      window.setTimeout(function () {
-        resolve(JSON.parse(JSON.stringify(value)));
-      }, config.mockDelay || 0);
-    });
+    return store || {};
   }
 
   function fail(message) {
@@ -115,7 +109,7 @@ window.BLOG_API_CONFIG = {
   function notesFor(folderId) {
     return (data().notes || [])
       .filter(function (note) {
-        return note.folder === folderId;
+        return note.folder === folderId && note.status !== "draft";
       })
       .slice()
       .sort(function (a, b) {
@@ -136,24 +130,34 @@ window.BLOG_API_CONFIG = {
     };
   }
 
+  function noteBodyPath(noteId) {
+    var pattern =
+      (data().manifest &&
+        data().manifest.files &&
+        data().manifest.files.noteBodyPattern) ||
+      config.noteBodyPattern ||
+      "note_html/{id}.json";
+    return dataRoot() + pattern.replace("{id}", encodeURIComponent(noteId));
+  }
+
   var BlogAPI = {
     config: config,
 
     getSite: function () {
       return ready().then(function () {
-        return delayed(data().site || {});
+        return data().site || {};
       });
     },
 
     getProfile: function () {
       return ready().then(function () {
-        return delayed(data().profile || {});
+        return data().profile || {};
       });
     },
 
     getAwards: function () {
       return ready().then(function () {
-        return delayed(data().awards || []);
+        return data().awards || [];
       });
     },
 
@@ -162,14 +166,16 @@ window.BLOG_API_CONFIG = {
         var notes = data().notes || [];
         var gallery = data().gallery || [];
         var resources = data().resources || [];
-        return delayed({
-          notes: notes.length,
+        return {
+          notes: notes.filter(function (note) {
+            return note.status !== "draft";
+          }).length,
           albums: gallery.length,
           photos: gallery.reduce(function (sum, album) {
             return sum + (album.photos ? album.photos.length : 0);
           }, 0),
           resources: resources.length,
-        });
+        };
       });
     },
 
@@ -182,7 +188,7 @@ window.BLOG_API_CONFIG = {
             latest: notes.length ? notes[0].date : "",
           });
         });
-        return delayed(folders);
+        return folders;
       });
     },
 
@@ -194,7 +200,12 @@ window.BLOG_API_CONFIG = {
         var folder = (data().articleFolders || []).find(function (item) {
           return item.id === folderId;
         });
-        if (!folder) return fail("没有找到这个文章文件夹。");
+        if (!folder) {
+          if (!(data().articleFolders || []).length) {
+            return fail("还没有创建任何文章文件夹。");
+          }
+          return fail("没有找到这个文章文件夹。");
+        }
 
         return BlogAPI.getArticleFolders().then(function (folders) {
           var meta =
@@ -210,11 +221,13 @@ window.BLOG_API_CONFIG = {
 
     getNote: function (noteId) {
       return ready().then(function () {
-        var notes = notesFor(
-          (data().notes || []).find(function (note) {
-            return note.id === noteId;
-          })?.folder
-        );
+        var all = data().notes || [];
+        var current = all.find(function (note) {
+          return note.id === noteId;
+        });
+        if (!current) return fail("没有找到这篇笔记。");
+
+        var notes = notesFor(current.folder);
         var index = notes.findIndex(function (note) {
           return note.id === noteId;
         });
@@ -229,33 +242,37 @@ window.BLOG_API_CONFIG = {
           folder: folder,
           previous: index > 0 ? noteMeta(notes[index - 1]) : null,
           next: index < notes.length - 1 ? noteMeta(notes[index + 1]) : null,
+          note: Object.assign({}, note, { body: "", generated: false }),
         };
 
-        if (isStatic()) {
-          return fetchJSON(root() + "notes/" + encodeURIComponent(noteId) + ".json")
-            .then(function (body) {
-              result.note = Object.assign({}, note, { body: body.body || "" });
-              return result;
-            })
-            .catch(function () {
-              result.note = Object.assign({}, note, { body: "" });
-              return result;
-            });
-        }
-
-        result.note = note;
-        return delayed(result);
+        return fetch(noteBodyPath(noteId), {
+          headers: { Accept: "application/json" },
+          cache: "no-cache",
+        })
+          .then(function (res) {
+            if (!res.ok) return null;
+            return res.json();
+          })
+          .then(function (body) {
+            if (body && typeof body.body === "string") {
+              result.note.body = body.body;
+              result.note.generated = true;
+            }
+            return result;
+          })
+          .catch(function () {
+            return result;
+          });
       });
     },
 
     getGalleryAlbums: function () {
       return ready().then(function () {
-        var albums = (data().gallery || []).map(function (album) {
+        return (data().gallery || []).map(function (album) {
           return Object.assign({}, album, {
             count: album.photos ? album.photos.length : 0,
           });
         });
-        return delayed(albums);
       });
     },
 
@@ -264,7 +281,7 @@ window.BLOG_API_CONFIG = {
         var album = (data().gallery || []).find(function (item) {
           return item.id === albumId;
         });
-        return album ? delayed(album) : fail("没有找到这个图集。");
+        return album ? album : fail("没有找到这个图集。");
       });
     },
 
@@ -278,7 +295,7 @@ window.BLOG_API_CONFIG = {
             downloadUrl: resource.downloadUrl || resource.file,
           });
         });
-        return delayed(makePage(items, safePage, safeSize));
+        return makePage(items, safePage, safeSize);
       });
     },
 

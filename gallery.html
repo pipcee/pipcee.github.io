@@ -6,7 +6,7 @@
   <meta name="description" content="Bring 的图库：山野、城市、海岸、校园、静物与光影，每行三个图集文件夹。">
   <meta name="theme-color" content="#ffffff">
   <title>图库 — Bring`s Blog</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="gallery">
@@ -117,9 +117,8 @@
     </div>
   </div>
 
-  <!-- [后端预留] 图集数据由 GET /api/gallery/albums 返回；
-       单张图片与封面建议由对象存储/CDN 提供，当前为本地 SVG 示例。 -->
-  <script src="js/data.js"></script>
+  <!-- 图集数据来自 data/content/gallery.json；图片文件位于 data/img/，
+       由后台 control/ 上传与删除。 -->
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
   <script src="js/gallery.js"></script>

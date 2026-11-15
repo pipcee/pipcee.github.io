@@ -6,7 +6,7 @@
   <meta name="description" content="Bring 的笔记：解题思路、算法整理与生活记录。">
   <meta name="theme-color" content="#ffffff">
   <title>笔记 — Bring`s Blog</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="note">
@@ -68,10 +68,8 @@
     </div>
   </footer>
 
-  <!-- [后端预留] 正文与上一篇/下一篇由 GET /api/notes/:id 返回。
-       后端应返回经过安全清洗的 HTML，并包含 folder / previous / next。 -->
-  <script src="js/data.js"></script>
-  <script src="js/notes-data.js"></script>
+  <!-- 正文由 data/note_html/{id}.json 提供（{ id, body }），
+       上一篇/下一篇在 notes-index.json 上计算。body 必须是可信的清洗后 HTML。 -->
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
   <script src="js/note.js"></script>

@@ -1,7 +1,0 @@
-# Local visual-QA artifacts
-.qa/
-*.log
-
-# OS noise
-.DS_Store
-Thumbs.db

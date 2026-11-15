@@ -6,7 +6,7 @@
   <meta name="description" content="Bring 的文章文件夹：ICPC 题解、算法笔记、社团建设笔记与杂物。">
   <meta name="theme-color" content="#ffffff">
   <title>文章 — Bring`s Blog</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="data/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="articles">
@@ -66,10 +66,8 @@
     </div>
   </footer>
 
-  <!-- [后端预留] 文件夹由 GET /api/article-folders 返回；
-       当前使用 js/notes-data.js + js/api.js 的本地 Mock。 -->
-  <script src="js/data.js"></script>
-  <script src="js/notes-data.js"></script>
+  <!-- 文件夹与计数由 BlogAPI 读取 data/content/article-folders.json
+       与 notes-index.json 现算。 -->
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
   <script src="js/articles.js"></script>
