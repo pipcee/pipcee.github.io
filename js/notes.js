@@ -119,9 +119,53 @@
     });
   }
 
+  function renderChildFolders(current, children) {
+    if (current) {
+      document.title = current.name + " — Bring`s Blog";
+      setText("notes-crumb", current.name);
+      setText("notes-description", current.description || "这个目录下还有子目录。");
+      setText("notes-total", String(children.length).padStart(2, "0"));
+      setText("notes-page-current", "—");
+      setText("notes-list-label", "Folders / " + (current.glyph || ""));
+
+      var title = document.getElementById("notes-title");
+      if (title) {
+        title.innerHTML = BlogUI.escapeHTML(current.name) + '<span class="title-dot">.</span>';
+      }
+      var eyebrow = document.getElementById("notes-eyebrow");
+      if (eyebrow) {
+        eyebrow.innerHTML =
+          "<span>" + BlogUI.escapeHTML(current.en || "Notes") +
+          '</span><span class="eyebrow__line" aria-hidden="true"></span>Folders';
+      }
+    }
+
+    list.innerHTML = children
+      .map(function (child) {
+        return (
+          '<a class="note-row" href="notes.html?folder=' + encodeURIComponent(child.id) + '">' +
+          '<span class="note-row__num">' + String(child.glyph || "").padStart(2, "0") + "</span>" +
+          '<div class="note-row__body"><h2>' + BlogUI.escapeHTML(child.name) + "</h2>" +
+          '<span class="note-row__summary">' + BlogUI.escapeHTML(child.description || "") + "</span></div>" +
+          '<span class="note-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+          "</a>"
+        );
+      })
+      .join("");
+    pagination.innerHTML = "";
+  }
+
   async function loadNotes() {
     setLoading();
     try {
+      var folders = await BlogAPI.getArticleFolders();
+      var current = folders.filter(function (item) { return item.id === folderId; })[0] || null;
+      var children = folders.filter(function (item) { return (item.parent || null) === folderId; });
+      if (children.length) {
+        renderChildFolders(current, children);
+        return;
+      }
+
       var result = await BlogAPI.getNotes(folderId, requestedPage, pageSize);
 
       if (result.totalPages > 0 && requestedPage > result.totalPages) {

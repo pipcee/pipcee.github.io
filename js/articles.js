@@ -75,7 +75,7 @@
     grid.setAttribute("aria-busy", "true");
     try {
       var folders = await BlogAPI.getArticleFolders();
-      renderFolders(folders);
+      renderFolders(folders.filter(function (item) { return !item.parent; }));
     } catch (error) {
       grid.innerHTML =
         '<div class="error-state"><div><p>' +
