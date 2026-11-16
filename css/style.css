@@ -1708,7 +1708,7 @@ a.page-button:hover {
 .folder-card__index {
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 13px;
   line-height: 1.4;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1750,7 +1750,7 @@ a.page-button:hover {
 }
 
 .folder-card h2 {
-  margin-top: 8px;
+  margin-top: clamp(34px, 5vw, 50px);
   font-family: var(--serif);
   font-size: clamp(28px, 3.3vw, 37px);
   font-weight: 400;
@@ -1777,7 +1777,7 @@ a.page-button:hover {
   color: var(--ink-muted);
   border-top: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.045em;
   text-transform: uppercase;
@@ -1785,7 +1785,8 @@ a.page-button:hover {
 
 .folder-card__bottom strong {
   color: var(--ink);
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
