@@ -43,15 +43,15 @@
           '<svg viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
           "</span>" +
           "</span>" +
-          '<span class="folder-card__en">' +
-          safeText(folder.en) +
-          "</span>" +
+          (folder.en
+            ? '<span class="folder-card__en">' + safeText(folder.en) + "</span>"
+            : "") +
           "<h2>" +
           safeText(folder.name) +
           "</h2>" +
-          '<span class="folder-card__description">' +
-          safeText(folder.description) +
-          "</span>" +
+          (folder.description
+            ? '<span class="folder-card__description">' + safeText(folder.description) + "</span>"
+            : "") +
           '<span class="folder-card__bottom">' +
           "<span><strong>" +
           String(count).padStart(2, "0") +

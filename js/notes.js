@@ -35,7 +35,7 @@
     if (!folder) return;
     document.title = folder.name + " — Bring`s Blog";
     setText("notes-crumb", folder.name);
-    setText("notes-description", folder.description);
+    setText("notes-description", folder.description || "");
     setText("notes-total", String(result.total).padStart(2, "0"));
     setText("notes-page-current", String(result.page).padStart(2, "0"));
     setText("notes-list-label", "Index / " + folder.glyph);
@@ -73,9 +73,6 @@
       "<h2>" +
       BlogUI.escapeHTML(note.title) +
       "</h2>" +
-      '<span class="note-row__summary">' +
-      BlogUI.escapeHTML(note.summary || "") +
-      "</span>" +
       "</div>" +
       '<span class="note-row__arrow" aria-hidden="true">' +
       '<svg viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
@@ -145,8 +142,7 @@
         return (
           '<a class="note-row" href="notes.html?folder=' + encodeURIComponent(child.id) + '">' +
           '<span class="note-row__num">' + String(child.glyph || "").padStart(2, "0") + "</span>" +
-          '<div class="note-row__body"><h2>' + BlogUI.escapeHTML(child.name) + "</h2>" +
-          '<span class="note-row__summary">' + BlogUI.escapeHTML(child.description || "") + "</span></div>" +
+          '<div class="note-row__body"><h2>' + BlogUI.escapeHTML(child.name) + "</h2></div>" +
           '<span class="note-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
           "</a>"
         );

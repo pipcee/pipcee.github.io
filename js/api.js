@@ -123,10 +123,8 @@ window.BLOG_API_CONFIG = {
       id: note.id,
       folder: note.folder,
       title: note.title,
-      summary: note.summary,
       date: note.date,
       readingTime: note.readingTime,
-      tags: note.tags,
     };
   }
 
