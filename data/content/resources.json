@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "file-a2dfce9d",
+    "name": "别人的板子",
+    "filename": "别人的板子.pdf",
+    "version": "V1.8.8",
+    "type": "PDF",
+    "description": "别人写的比较全面的竞赛模板",
+    "updated": "2024.11.19",
+    "size": "6.6 MB",
+    "md5": "f9d8302efb0c32f3fb1f6cb462c5e6e8",
+    "file": "data/files/别人的板子/别人的板子.pdf",
+    "url": "https://github.com/hh2048/XCPC/releases",
+    "status": "published",
+    "downloadUrl": "data/files/别人的板子/别人的板子.pdf"
+  }
+]
