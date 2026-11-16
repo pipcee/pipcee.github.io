@@ -1804,9 +1804,9 @@ a.page-button:hover {
   margin-bottom: clamp(30px, 4vw, 46px);
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 13px;
   line-height: 1.6;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -1907,9 +1907,9 @@ a.page-button:hover {
   margin-bottom: 14px;
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1.5;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -2386,7 +2386,7 @@ a.page-button:hover {
   }
 
   .notes-list-heading {
-    font-size: 7px;
+    font-size: 11px;
   }
 
   .note-row {
@@ -3650,3 +3650,72 @@ a.page-button:hover {
   flex: 0 0 auto;
   margin-top: 0;
 }
+
+
+/* ---------- Markdown 渲染产物：公式 / 代码 / callout ---------- */
+.math-block {
+  margin: 20px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.math-block .katex-display { margin: 0; }
+
+.note-body .katex { font-size: 1.05em; }
+
+.code-block { margin: 20px 0; }
+
+.code-block pre {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 16px);
+  background: #f6f8fa;
+}
+
+.code-block code.hljs {
+  padding: 0;
+  background: transparent;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.75;
+}
+
+.callout {
+  margin: 22px 0;
+  padding: 18px 22px;
+  border: 1px solid #d9e6f8;
+  border-radius: 16px;
+  background: #eef4fd;
+  color: #23384f;
+}
+
+.callout__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #2f6fb3;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.callout__icon { font-size: 13px; opacity: .85; }
+.callout__body > :first-child { margin-top: 0; }
+.callout__body > :last-child { margin-bottom: 0; }
+.callout__body p { line-height: 1.9; }
+
+.callout--note,
+.callout--info { background: #f2f6fb; border-color: #dde7f3; }
+.callout--tip,
+.callout--success { background: #eef7f1; border-color: #d5e9dd; }
+.callout--tip .callout__title,
+.callout--success .callout__title { color: #2f6b4b; }
+.callout--warning { background: #fdf6e8; border-color: #f0e2c4; }
+.callout--warning .callout__title { color: #8a6a1f; }
+.callout--danger,
+.callout--error { background: #fdeeee; border-color: #f2d7d7; }
+.callout--danger .callout__title,
+.callout--error .callout__title { color: #9b3d33; }
