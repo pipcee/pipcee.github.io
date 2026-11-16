@@ -18,5 +18,25 @@
     "accent": "#8a6b4c",
     "soft": "#f5efe6",
     "parent": "folder-2690b7ae"
+  },
+  {
+    "id": "folder-b0101dff",
+    "name": "技巧",
+    "en": "",
+    "description": "",
+    "glyph": "03",
+    "accent": "#4d6172",
+    "soft": "#eef2f5",
+    "parent": "folder-2690b7ae"
+  },
+  {
+    "id": "folder-f40f242f",
+    "name": "图论",
+    "en": "",
+    "description": "",
+    "glyph": "04",
+    "accent": "#7a5c63",
+    "soft": "#f5eef0",
+    "parent": "folder-2690b7ae"
   }
 ]
