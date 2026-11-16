@@ -3701,6 +3701,7 @@ a.page-button:hover {
 
 .code-body code.hljs {
   padding: 0;
+  color: #383a42;              /* 未高亮的普通代码字符：深灰近黑 */
   background: transparent;
   font-family: var(--mono);
   font-size: 12.5px;
