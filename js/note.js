@@ -74,23 +74,23 @@
         var chain = crumbChain(folder, result.folders || []);
         crumbFolder.innerHTML = chain
           .map(function (node, index) {
-            var last = index === chain.length - 1;
             var label = BlogUI.escapeHTML(node.name);
-            if (last) return label;
+            var sep = index === chain.length - 1
+              ? ""
+              : '<span class="breadcrumb__sep" aria-hidden="true">/</span>';
             return (
-              '<a href="notes.html?folder=' + encodeURIComponent(node.id) + '">' + label + "</a>" +
-              '<span class="breadcrumb__sep" aria-hidden="true">/</span>'
+              '<a href="notes.html?folder=' + encodeURIComponent(node.id) + '">' + label + "</a>" + sep
             );
           })
           .join("");
-        crumbFolder.href = folderHref(folder);
       } else {
-        crumbFolder.textContent = "笔记";
+        crumbFolder.innerHTML = '<a href="notes.html">笔记</a>';
       }
     }
 
     if (note.body) {
       body.innerHTML = note.body;
+      enhanceCodeBlocks();
     } else {
       body.innerHTML =
         '<div class="empty-state"><div><h3>正文还没有生成</h3>' +
@@ -103,6 +103,58 @@
       back.href = folder ? folderHref(folder) + "&page=1" : "articles.html";
     }
 
+  }
+
+  function enhanceCodeBlocks() {
+    Array.prototype.forEach.call(document.querySelectorAll(".code-block"), function (block) {
+      if (block.querySelector(".code-copy")) return;
+      var code = block.querySelector("code");
+      if (!code) return;
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "code-copy";
+      button.textContent = "复制";
+
+      function flash(text) {
+        button.textContent = text;
+        button.classList.add("is-active");
+        window.setTimeout(function () {
+          button.textContent = "复制";
+          button.classList.remove("is-active");
+        }, 1200);
+      }
+
+      function fallback(text) {
+        var area = document.createElement("textarea");
+        area.value = text;
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        try {
+          document.execCommand("copy");
+          flash("已复制");
+        } catch (error) {
+          flash("复制失败");
+        }
+        document.body.removeChild(area);
+      }
+
+      button.addEventListener("click", function () {
+        var text = code.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            flash("已复制");
+          }).catch(function () {
+            fallback(text);
+          });
+        } else {
+          fallback(text);
+        }
+      });
+
+      block.appendChild(button);
+    });
   }
 
   async function loadNote() {
