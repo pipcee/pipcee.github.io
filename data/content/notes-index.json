@@ -338,5 +338,85 @@
     "status": "published",
     "filename": "最小直径生成树.md",
     "processedAt": "2026-11-16T19:34:35+08:00"
+  },
+  {
+    "id": "ac",
+    "folder": "folder-b520dfef",
+    "title": "AC自动机",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "AC自动机.md",
+    "processedAt": "2026-11-16T19:46:02+08:00"
+  },
+  {
+    "id": "bm-boyermoore",
+    "folder": "folder-b520dfef",
+    "title": "BM算法(Boyer–Moore)",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "BM算法(Boyer–Moore).md",
+    "processedAt": "2026-11-16T19:46:04+08:00"
+  },
+  {
+    "id": "kmp",
+    "folder": "folder-b520dfef",
+    "title": "KMP",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "KMP.md",
+    "processedAt": "2026-11-16T19:46:05+08:00"
+  },
+  {
+    "id": "manacher",
+    "folder": "folder-b520dfef",
+    "title": "Manacher",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "Manacher.md",
+    "processedAt": "2026-11-16T19:46:07+08:00"
+  },
+  {
+    "id": "sm",
+    "folder": "folder-b520dfef",
+    "title": "SM后缀数组",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "SM后缀数组.md",
+    "processedAt": "2026-11-16T19:46:07+08:00"
+  },
+  {
+    "id": "trie",
+    "folder": "folder-b520dfef",
+    "title": "Trie树",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "Trie树.md",
+    "processedAt": "2026-11-16T19:46:08+08:00"
+  },
+  {
+    "id": "hash",
+    "folder": "folder-b520dfef",
+    "title": "哈希Hash",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "哈希Hash.md",
+    "processedAt": "2026-11-16T19:46:10+08:00"
+  },
+  {
+    "id": "kmp-z",
+    "folder": "folder-b520dfef",
+    "title": "扩展KMP(Z函数)",
+    "date": "2026-11-16",
+    "readingTime": 1,
+    "status": "published",
+    "filename": "扩展KMP(Z函数).md",
+    "processedAt": "2026-11-16T19:46:11+08:00"
   }
 ]

@@ -38,5 +38,15 @@
     "accent": "#7a5c63",
     "soft": "#f5eef0",
     "parent": "folder-2690b7ae"
+  },
+  {
+    "id": "folder-b520dfef",
+    "name": "字符串",
+    "en": "",
+    "description": "",
+    "glyph": "05",
+    "accent": "#5d6b46",
+    "soft": "#f0f2e9",
+    "parent": "folder-2690b7ae"
   }
 ]
