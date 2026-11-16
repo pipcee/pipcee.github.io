@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "folder-2690b7ae",
+    "name": "算法模板",
+    "en": "Algorithm Template",
+    "description": "",
+    "glyph": "01",
+    "accent": "#34584b",
+    "soft": "#edf3ef",
+    "parent": null
+  }
+]
