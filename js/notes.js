@@ -9,6 +9,7 @@
   var folderId = BlogUI.readQuery("folder", "icpc");
   var requestedPage = BlogUI.positiveInt(BlogUI.readQuery("page", "1"), 1);
   var pageSize = 15;
+  var allFolders = [];
 
   function setText(id, value) {
     var node = document.getElementById(id);
@@ -31,10 +32,47 @@
     if (retry) retry.addEventListener("click", loadNotes);
   }
 
+  function folderById(folderId) {
+    return allFolders.filter(function (item) {
+      return item.id === folderId;
+    })[0] || null;
+  }
+
+  function ancestryOf(folderId) {
+    var chain = [];
+    var node = folderById(folderId);
+    var guard = 0;
+    while (node && guard < 50) {
+      chain.unshift(node);
+      node = node.parent ? folderById(node.parent) : null;
+      guard += 1;
+    }
+    return chain;
+  }
+
+  function renderCrumb(folderId) {
+    var host = document.getElementById("notes-crumb");
+    if (!host) return;
+    var chain = ancestryOf(folderId);
+    if (!chain.length) {
+      host.textContent = "笔记列表";
+      return;
+    }
+    host.innerHTML = chain
+      .map(function (node, index) {
+        var last = index === chain.length - 1;
+        var label = BlogUI.escapeHTML(node.name);
+        var sep = last ? "" : '<span class="breadcrumb__sep" aria-hidden="true">/</span>';
+        if (last) return '<span aria-current="page">' + label + "</span>";
+        return '<a href="notes.html?folder=' + encodeURIComponent(node.id) + '">' + label + "</a>" + sep;
+      })
+      .join("");
+  }
+
   function updateHeader(folder, result) {
     if (!folder) return;
     document.title = folder.name + " — Bring`s Blog";
-    setText("notes-crumb", folder.name);
+    renderCrumb(folder.id);
     setText("notes-description", folder.description || "");
     setText("notes-total", String(result.total).padStart(2, "0"));
     setText("notes-page-current", String(result.page).padStart(2, "0"));
@@ -119,7 +157,7 @@
   function renderChildFolders(current, children) {
     if (current) {
       document.title = current.name + " — Bring`s Blog";
-      setText("notes-crumb", current.name);
+      renderCrumb(current.id);
       setText("notes-description", current.description || "这个目录下还有子目录。");
       setText("notes-total", String(children.length).padStart(2, "0"));
       setText("notes-page-current", "—");
@@ -155,6 +193,8 @@
     setLoading();
     try {
       var folders = await BlogAPI.getArticleFolders();
+      allFolders = folders;
+      renderCrumb(folderId);
       var current = folders.filter(function (item) { return item.id === folderId; })[0] || null;
       var children = folders.filter(function (item) { return (item.parent || null) === folderId; });
       if (children.length) {

@@ -14,6 +14,24 @@
     if (node) node.textContent = value;
   }
 
+  function folderById(folderId, folders) {
+    return folders.filter(function (item) {
+      return item.id === folderId;
+    })[0] || null;
+  }
+
+  function crumbChain(folder, folders) {
+    var chain = [];
+    var node = folder;
+    var guard = 0;
+    while (node && guard < 50) {
+      chain.unshift(node);
+      node = node.parent ? folderById(node.parent, folders) : null;
+      guard += 1;
+    }
+    return chain;
+  }
+
   function folderHref(folder) {
     return folder
       ? "notes.html?folder=" + encodeURIComponent(folder.id)
@@ -52,8 +70,23 @@
 
     var crumbFolder = document.getElementById("note-crumb-folder");
     if (crumbFolder) {
-      crumbFolder.textContent = folder ? folder.name : "笔记";
-      crumbFolder.href = folderHref(folder);
+      if (folder) {
+        var chain = crumbChain(folder, result.folders || []);
+        crumbFolder.innerHTML = chain
+          .map(function (node, index) {
+            var last = index === chain.length - 1;
+            var label = BlogUI.escapeHTML(node.name);
+            if (last) return label;
+            return (
+              '<a href="notes.html?folder=' + encodeURIComponent(node.id) + '">' + label + "</a>" +
+              '<span class="breadcrumb__sep" aria-hidden="true">/</span>'
+            );
+          })
+          .join("");
+        crumbFolder.href = folderHref(folder);
+      } else {
+        crumbFolder.textContent = "笔记";
+      }
     }
 
     if (note.body) {
@@ -80,6 +113,7 @@
 
     try {
       var result = await BlogAPI.getNote(noteId);
+      result.folders = await BlogAPI.getArticleFolders();
       renderNote(result);
     } catch (error) {
       showError(error.message, null);
