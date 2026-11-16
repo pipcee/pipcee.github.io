@@ -3664,18 +3664,42 @@ a.page-button:hover {
 
 .note-body .katex { font-size: 1.05em; }
 
-.code-block { margin: 20px 0; }
+.code-block {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin: 22px 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fbfbf8;
+  overflow: hidden;
+}
 
 .code-block pre {
   margin: 0;
-  padding: 16px 18px;
-  overflow-x: auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md, 16px);
-  background: #f6f8fa;
+  padding: 16px 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.75;
 }
 
-.code-block code.hljs {
+.code-gutter {
+  padding-right: 12px !important;
+  padding-left: 16px !important;
+  border-right: 1px solid var(--line);
+  color: #b9b8ae;
+  text-align: right;
+  user-select: none;
+}
+
+.code-body {
+  padding-right: 18px !important;
+  padding-left: 18px !important;
+  overflow-x: auto;
+}
+
+.code-body code.hljs {
   padding: 0;
   background: transparent;
   font-family: var(--mono);
