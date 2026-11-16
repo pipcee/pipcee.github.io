@@ -3355,7 +3355,7 @@ a.page-button:hover {
   overflow-wrap: anywhere;
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 8.5px;
+  font-size: 13px;
   line-height: 1.6;
   letter-spacing: 0.01em;
 }
@@ -3398,7 +3398,7 @@ a.page-button:hover {
   flex: 0 0 auto;
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 6.5px;
+  font-size: 11px;
   line-height: 1.4;
   letter-spacing: 0.08em;
 }
@@ -3407,7 +3407,7 @@ a.page-button:hover {
   overflow-wrap: anywhere;
   color: var(--ink-soft);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.005em;
 }
@@ -3420,7 +3420,7 @@ a.page-button:hover {
   margin-top: 8px;
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 7.5px;
+  font-size: 13px;
   line-height: 1.5;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -3436,7 +3436,7 @@ a.page-button:hover {
 .resource-file-index {
   color: var(--ink-muted);
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 11px;
   line-height: 1.5;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -3584,7 +3584,7 @@ a.page-button:hover {
   }
 
   .resource-card__filename {
-    font-size: 8px;
+    font-size: 12px;
     word-break: break-all;
   }
 
@@ -3600,13 +3600,13 @@ a.page-button:hover {
   }
 
   .md5-field code {
-    font-size: 8px;
+    font-size: 11px;
     line-height: 1.6;
   }
 
   .resource-card__submeta {
     gap: 10px;
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .resource-card__footer {
