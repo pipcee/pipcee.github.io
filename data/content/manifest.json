@@ -1,7 +1,7 @@
 {
   "protocol": "brings-blog-content/2",
-  "version": 1794829571,
-  "generatedAt": "2026-11-16T19:46:11+08:00",
+  "version": 1794829854,
+  "generatedAt": "2026-11-16T19:50:54+08:00",
   "files": {
     "site": "site.json",
     "awards": "awards.json",
