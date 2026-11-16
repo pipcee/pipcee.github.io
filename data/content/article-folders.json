@@ -8,5 +8,15 @@
     "accent": "#34584b",
     "soft": "#edf3ef",
     "parent": null
+  },
+  {
+    "id": "folder-2cffefc4",
+    "name": "计算几何",
+    "en": "",
+    "description": "",
+    "glyph": "02",
+    "accent": "#8a6b4c",
+    "soft": "#f5efe6",
+    "parent": "folder-2690b7ae"
   }
 ]
