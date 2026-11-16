@@ -3,10 +3,8 @@
     "id": "note-20261116-6bde099e",
     "folder": "folder-2cffefc4",
     "title": "二维平面几何基础",
-    "summary": "$给定l:p,v ,判断q在l的哪边$",
     "date": "2026-11-16",
     "readingTime": 1,
-    "tags": [],
     "status": "published",
     "filename": "二维平面几何基础.md",
     "processedAt": "2026-11-16T11:16:43+08:00"
@@ -15,10 +13,8 @@
     "id": "note-20261116-51e0fa0a",
     "folder": "folder-2cffefc4",
     "title": "二维凸包",
-    "summary": "凸包（Convex Hull）是包含给定点集的最小凸多边形。在二维平面上，凸包可以想象成“包围所有点的橡皮筋”绷紧后的形状。",
     "date": "2026-11-16",
     "readingTime": 1,
-    "tags": [],
     "status": "published",
     "filename": "二维凸包.md",
     "processedAt": "2026-11-16T11:16:56+08:00"
