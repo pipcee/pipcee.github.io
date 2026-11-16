@@ -179,14 +179,41 @@ window.BLOG_API_CONFIG = {
 
     getArticleFolders: function () {
       return ready().then(function () {
-        var folders = (data().articleFolders || []).map(function (folder) {
-          var notes = notesFor(folder.id);
+        var folders = data().articleFolders || [];
+        var notes = data().notes || [];
+
+        function childrenOf(folderId) {
+          return folders.filter(function (item) {
+            return (item.parent || null) === folderId;
+          });
+        }
+
+        function descendants(folderId) {
+          var ids = [folderId];
+          childrenOf(folderId).forEach(function (child) {
+            ids = ids.concat(descendants(child.id));
+          });
+          return ids;
+        }
+
+        return folders.map(function (folder) {
+          var ids = descendants(folder.id);
+          var scoped = notes
+            .filter(function (note) {
+              return ids.indexOf(note.folder) >= 0;
+            })
+            .slice()
+            .sort(function (a, b) {
+              return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+            });
           return Object.assign({}, folder, {
-            count: notes.length,
-            latest: notes.length ? notes[0].date : "",
+            count: scoped.length,
+            ownCount: notes.filter(function (note) {
+              return note.folder === folder.id;
+            }).length,
+            latest: scoped.length ? scoped[0].date : "",
           });
         });
-        return folders;
       });
     },
 
